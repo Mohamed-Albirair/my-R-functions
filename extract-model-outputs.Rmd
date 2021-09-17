@@ -1,8 +1,22 @@
 ---
 title: "Extract Model Outputs"
 author: "Mohamed Albirair"
+<<<<<<< HEAD
 date: "9/17/2021"
 output: html_document
+=======
+geometry: "left = 1cm, right = 1cm, top = 1cm, bottom = 1.5cm"
+header-includes:
+  - \usepackage{float}
+  - \floatplacement{figure}{H}  #make every figure with caption = h, this was the fix
+  - \usepackage{setspace}\setstretch{1.25}
+  - \usepackage{xcolor}
+output:
+  bookdown::pdf_document2:
+        toc: true
+fig_caption: yes
+urlcolor: blue
+>>>>>>> 69ba6d219856e2f83c00ee3c82252f33b2d93797
 ---
 
 ```{r setup, include=FALSE}
@@ -13,7 +27,11 @@ pacman::p_load(tidyverse)
 
 # Linear models
 
+<<<<<<< HEAD
 Below is a function that extracts linear models outputs (or `glm()` models with `family = "gaussian"` specification). Please note that the different variables will need to be named in a separate command (as in the following chunk).
+=======
+Below is a fuction that extracts linear models outputs (or `glm()` models with `family = "gaussian"` specification). Please note that the different variables will need to be named in a separate command (as in the following chunk).
+>>>>>>> 69ba6d219856e2f83c00ee3c82252f33b2d93797
 
 ```{r linear model ouptut, results='hide'}
 
