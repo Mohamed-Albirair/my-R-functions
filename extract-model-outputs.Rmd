@@ -8,14 +8,12 @@ output: html_document
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, results = 'hold', warning = FALSE,
-                      message = FALSE, error = FALSE, fig.height = 3.4)
+                      message = FALSE, error = FALSE)
 
 pacman::p_load(tidyverse)
 ```
 
-<<<<<<< HEAD
 Below is a function that extracts linear models outputs (or `glm()` models with `family = "gaussian"` specification).
->>>>>>> 35939bc189a50f7b38eca1697bd8046ddbe58749
 
 ```{r linear model ouptut, results='hide'}
 
