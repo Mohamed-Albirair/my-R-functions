@@ -13,7 +13,9 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, results = 'hold', warning = FALS
 pacman::p_load(tidyverse)
 ```
 
+<<<<<<< HEAD
 Below is a function that extracts linear models outputs (or `glm()` models with `family = "gaussian"` specification).
+>>>>>>> 35939bc189a50f7b38eca1697bd8046ddbe58749
 
 ```{r linear model ouptut, results='hide'}
 
