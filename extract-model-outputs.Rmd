@@ -17,7 +17,7 @@ pacman::p_load(tidyverse)
 
 Below is a function that extracts simple linear models outputs (or `glm()` models with `family = "gaussian"` specification).
 
-```{r linear model ouptut, results='hide'}
+```{r simple linear model ouptut, results='hide'}
 
 lmmod <- lm(mpg ~ cyl + gear + hp,
             data = mtcars)
@@ -30,19 +30,19 @@ caschools <- read_csv("https://vincentarelbundock.github.io/Rdatasets/csv/AER/CA
 lmmod <- lm(score ~ stratio + lunch + computer + expenditure, data = caschools)
 
 lmOutputExtract <- function(mod){
-            lmOutput <- data.frame(coefficients(summary(mod))[, c(1, 4)], confint(mod)) %>%
-                  dplyr::select(1, 3, 4, 2) %>% round(., 3) %>%
-                  `colnames<-`(c("Coefficient", "LCL", "UCL", "P-value")) %>%
-                  mutate(`P-value` = case_when(`P-value` < 0.001 ~ "<0.001*",
-                                               `P-value` < 0.05 ~ paste0(`P-value`,"*"),
-                                               `P-value` >= 0.05 ~ as.character(`P-value`)))
+      lmOutput <- data.frame(coefficients(summary(mod))[, c(1, 4)], confint(mod)) %>%
+            dplyr::select(1, 3, 4, 2) %>% round(., 3) %>%
+            `colnames<-`(c("Coefficient", "LCL", "UCL", "P-value")) %>%
+            mutate(`P-value` = case_when(`P-value` < 0.001 ~ "<0.001*",
+                                         `P-value` < 0.05 ~ paste0(`P-value`,"*"),
+                                         `P-value` >= 0.05 ~ as.character(`P-value`)))
             print(lmOutput)
 }
  
 linearOutput <- lmOutputExtract(lmmod)
 ```
 
-```{r linear modeul output formatted}
+```{r simple linear modeul output formatted}
 linearOutput %>%
       pander::pander(., caption = "Linear regression model output", style = "rmarkdown")
 ```
@@ -51,7 +51,7 @@ linearOutput %>%
 
 The function below can be used for simple logistic and poisson regression models as well as other models were the associations are on the multiplicative scale (i.e., that assess relationships on the log scale)
 
-```{r logistic model ouptut, results='hide'}
+```{r simple logistic model ouptut, results='hide'}
 # Using variables from the same data set as above (with no theoretical foundation)
 logitmod <- glm(factor(grades) ~ stratio + lunch + computer + expenditure,
                 # factor is needed because the binary output MUST have an inherent ranking
@@ -75,7 +75,7 @@ logitOutputExtract <- function(mod){
 logitOutput <- logitOutputExtract(logitmod)
 ```
 
-```{r linear model ouptut formatted}
+```{r simple logistic model output formatted}
 logitOutput %>%
       pander::pander(., caption = "Linear regression model output", style = "rmarkdown")
 ```

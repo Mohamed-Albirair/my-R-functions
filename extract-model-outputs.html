@@ -185,12 +185,12 @@ caschools &lt;- read_csv(&quot;https://vincentarelbundock.github.io/Rdatasets/cs
 lmmod &lt;- lm(score ~ stratio + lunch + computer + expenditure, data = caschools)
 
 lmOutputExtract &lt;- function(mod){
-            lmOutput &lt;- data.frame(coefficients(summary(mod))[, c(1, 4)], confint(mod)) %&gt;%
-                  dplyr::select(1, 3, 4, 2) %&gt;% round(., 3) %&gt;%
-                  `colnames&lt;-`(c(&quot;Coefficient&quot;, &quot;LCL&quot;, &quot;UCL&quot;, &quot;P-value&quot;)) %&gt;%
-                  mutate(`P-value` = case_when(`P-value` &lt; 0.001 ~ &quot;&lt;0.001*&quot;,
-                                               `P-value` &lt; 0.05 ~ paste0(`P-value`,&quot;*&quot;),
-                                               `P-value` &gt;= 0.05 ~ as.character(`P-value`)))
+      lmOutput &lt;- data.frame(coefficients(summary(mod))[, c(1, 4)], confint(mod)) %&gt;%
+            dplyr::select(1, 3, 4, 2) %&gt;% round(., 3) %&gt;%
+            `colnames&lt;-`(c(&quot;Coefficient&quot;, &quot;LCL&quot;, &quot;UCL&quot;, &quot;P-value&quot;)) %&gt;%
+            mutate(`P-value` = case_when(`P-value` &lt; 0.001 ~ &quot;&lt;0.001*&quot;,
+                                         `P-value` &lt; 0.05 ~ paste0(`P-value`,&quot;*&quot;),
+                                         `P-value` &gt;= 0.05 ~ as.character(`P-value`)))
             print(lmOutput)
 }
  
