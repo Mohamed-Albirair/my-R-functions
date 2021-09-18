@@ -174,10 +174,7 @@ pre code {
 <div id="simple-linear-regression-models" class="section level1">
 <h1>Simple Linear Regression Models</h1>
 <p>Below is a function that extracts simple linear models outputs (or <code>glm()</code> models with <code>family = &quot;gaussian&quot;</code> specification).</p>
-<pre class="r"><code>lmmod &lt;- lm(mpg ~ cyl + gear + hp,
-            data = mtcars)
-
-caschools &lt;- read_csv(&quot;https://vincentarelbundock.github.io/Rdatasets/csv/AER/CASchools.csv&quot;) %&gt;%
+<pre class="r"><code>caschools &lt;- read_csv(&quot;https://vincentarelbundock.github.io/Rdatasets/csv/AER/CASchools.csv&quot;) %&gt;%
       # Data and dictionary are from the link: https://vincentarelbundock.github.io/Rdatasets/datasets.html
       mutate(stratio = students / teachers,
              score = (math + read) / 2)
