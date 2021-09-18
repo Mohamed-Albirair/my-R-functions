@@ -19,9 +19,6 @@ Below is a function that extracts simple linear models outputs (or `glm()` model
 
 ```{r simple linear model ouptut, results='hide'}
 
-lmmod <- lm(mpg ~ cyl + gear + hp,
-            data = mtcars)
-
 caschools <- read_csv("https://vincentarelbundock.github.io/Rdatasets/csv/AER/CASchools.csv") %>%
       # Data and dictionary are from the link: https://vincentarelbundock.github.io/Rdatasets/datasets.html
       mutate(stratio = students / teachers,
