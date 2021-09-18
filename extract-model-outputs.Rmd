@@ -51,7 +51,7 @@ linearOutput %>%
 
 The function below can be used for simple logistic and poisson regression models as well as other models were the associations are on the multiplicative scale (i.e., that assess relationships on the log scale)
 
-```{r q1b, results='hide'}
+```{r logistic model ouptut, results='hide'}
 # Using variables from the same data set as above (with no theoretical foundation)
 logitmod <- glm(factor(grades) ~ stratio + lunch + computer + expenditure,
                 # factor is needed because the binary output MUST have an inherent ranking
@@ -75,7 +75,7 @@ logitOutputExtract <- function(mod){
 logitOutput <- logitOutputExtract(logitmod)
 ```
 
-```{r q1bOutput}
+```{r linear model ouptut formatted}
 logitOutput %>%
       pander::pander(., caption = "Linear regression model output", style = "rmarkdown")
 ```
