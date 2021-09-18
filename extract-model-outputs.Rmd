@@ -22,6 +22,13 @@ Below is a function that extracts simple linear models outputs (or `glm()` model
 lmmod <- lm(mpg ~ cyl + gear + hp,
             data = mtcars)
 
+caschools <- read_csv("https://vincentarelbundock.github.io/Rdatasets/csv/AER/CASchools.csv") %>%
+      # Data and dictionary are from the link: https://vincentarelbundock.github.io/Rdatasets/datasets.html
+      mutate(stratio = students / teachers,
+             score = (math + read) / 2)
+
+lmmod <- lm(score ~ stratio + lunch + computer + expenditure, data = caschools)
+
 lmOutputExtract <- function(mod){
             lmOutput <- data.frame(coefficients(summary(mod))[, c(1, 4)], confint(mod)) %>%
                   dplyr::select(1, 3, 4, 2) %>% round(., 3) %>%
@@ -29,15 +36,15 @@ lmOutputExtract <- function(mod){
                   mutate(`P-value` = case_when(`P-value` < 0.001 ~ "<0.001*",
                                                `P-value` < 0.05 ~ paste0(`P-value`,"*"),
                                                `P-value` >= 0.05 ~ as.character(`P-value`)))
-            print(lmOutput)}
+            print(lmOutput)
+}
  
 linearOutput <- lmOutputExtract(lmmod)
 ```
 
 ```{r linear modeul output formatted}
-linearOuptut %>%
-      knitr::kable("latex", caption = "Linear regression model output") %>%
-      kableExtra::kable_styling(latex_options = c("striped", "HOLD_position"), fixed_thead = T)
+linearOutput %>%
+      pander::pander(., caption = "Linear regression model output", style = "rmarkdown")
 ```
 
 # Simple Logistic Regression Models
@@ -45,9 +52,13 @@ linearOuptut %>%
 The function below can be used for simple logistic and poisson regression models as well as other models were the associations are on the multiplicative scale (i.e., that assess relationships on the log scale)
 
 ```{r q1b, results='hide'}
-logitmod <- glm(factor(am) ~ mpg + cyl + hp,
-                data = mtcars,
-                family = binomial(link = "logit"))
+# Using variables from the same data set as above (with no theoretical foundation)
+logitmod <- glm(factor(grades) ~ stratio + lunch + computer + expenditure,
+                # factor is needed because the binary output MUST have an inherent ranking
+                # i.e., needs to understand which one of the 2 values would be the reference.
+                # The factor() commands takes care of that
+                family = "binomial", # or, more specifically, binomial(link = "logit")
+                data = caschools)
 
 logitOutputExtract <- function(mod){
       logitOutput <- data.frame(exp(coefficients(summary(mod)))[, 1],
@@ -60,12 +71,12 @@ logitOutputExtract <- function(mod){
                                          `P-value` >= 0.05 ~ as.character(`P-value`)))
       print(logitOutput)
 }
+
 logitOutput <- logitOutputExtract(logitmod)
 ```
 
 ```{r q1bOutput}
-hw04mod1logitOuptut %>%
-      knitr::kable("latex", caption = "Logistic regression model output") %>%
-      kableExtra::kable_styling(latex_options = c("striped", "HOLD_position"), fixed_thead = T)
+logitOutput %>%
+      pander::pander(., caption = "Linear regression model output", style = "rmarkdown")
 ```
 
