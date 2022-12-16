@@ -5,5 +5,5 @@ lmOutputExtract <- function(mod, signifLevel = 0.05){
             mutate(`P-value` = case_when(`P-value` < 0.001        ~ "<0.001*",
                                          `P-value` < signifLevel  ~ paste0(`P-value`,"*"),
                                          `P-value` >= signifLevel ~ as.character(`P-value`)))
-      print(lmOutput)
+#      print(lmOutput)
 }
