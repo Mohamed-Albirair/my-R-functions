@@ -8,5 +8,5 @@ logitMLMOutputExtract <- function(mod){
             mutate(`P-value` = case_when(`P-value` < 0.001 ~ "<0.001*",
                                          `P-value` < 0.05 ~ paste0(`P-value`,"*"),
                                          `P-value` >= 0.05 ~ as.character(`P-value`)))
-      print(logitMLMOutput)
+      # print(logitMLMOutput)
 }
