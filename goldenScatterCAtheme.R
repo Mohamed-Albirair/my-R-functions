@@ -5,7 +5,7 @@ goldenScatterCAtheme <- theme(
       panel.background = element_rect(fill = "white"), 
       
       # Golden rectangle plotting area (leave out for square)
-      aspect.ratio = (9 / 16), # ((1 + sqrt(5)) / 2) ^ (- 1), 
+      aspect.ratio = ((1 + sqrt(5)) / 2) ^ (- 1), 
       
       ## All axes changes
       axis.ticks.length = unit(0.5, "char"),              # longer ticks
