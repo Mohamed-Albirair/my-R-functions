@@ -11,18 +11,14 @@ Functions to automate common analyses
 
   * [lmOutputExtract](https://github.com/SenshiKudo/my-R-functions/blob/main/lmOutputExtract.R)
   
-  * [modOutput](https://github.com/SenshiKudo/my-R-functions/blob/main/modOutput.R)
-  
-    - Input `FALSE` to the `TorF` argument
+  * [modOutput](https://github.com/SenshiKudo/my-R-functions/blob/main/modOutput.R) *(Input `FALSE` to the `TorF` argument)*
 
   
 ### Non-Linear, Single-Level Model Outputs
 
   * [logitOutputExtract](https://github.com/SenshiKudo/my-R-functions/blob/main/logitOutputExtract.R)
   
-  * [modOutput](https://github.com/SenshiKudo/my-R-functions/blob/main/modOutput.R)
-  
-    - Input `TRUE` to the `TorF` argument
+  * [modOutput](https://github.com/SenshiKudo/my-R-functions/blob/main/modOutput.R) *(Input `TRUE` to the `TorF` argument)*
   
 ### Non-Linear, Multi-Level Model Outputs
 
