@@ -1,2 +1,35 @@
-# my-functions
+# my-R-functions
 Functions to automate common analyses
+
+## Extracting Regression Analysis Outputs
+
+### Linear, Single-Level Model Outputs
+
+  * [lmOutputExtract](https://github.com/SenshiKudo/my-R-functions/blob/main/lmOutputExtract.R)
+  
+  * [modOutput](https://github.com/SenshiKudo/my-R-functions/blob/main/modOutput.R)
+  
+    - Input `FALSE` to the `TorF` argument
+
+  
+### Non-Linear, Single-Level Model Outputs
+
+  * [logitOutputExtract](https://github.com/SenshiKudo/my-R-functions/blob/main/logitOutputExtract.R)
+  
+  * [modOutput](https://github.com/SenshiKudo/my-R-functions/blob/main/modOutput.R)
+  
+    - Input `TRUE` to the `TorF` argument
+  
+### Non-Linear, Multi-Level Model Outputs
+
+  * [logitMLMOutputExtract](https://github.com/SenshiKudo/my-R-functions/blob/main/logitMLMOutputExtract.R)
+  
+## Epi Conversions
+
+  * [probToRate](https://github.com/SenshiKudo/my-R-functions/blob/main/probToRate.R): from probability to rate
+  
+  * [rateToProb](https://github.com/SenshiKudo/my-R-functions/blob/main/rateToProb.R): from rate to probability:
+
+  
+
+  
