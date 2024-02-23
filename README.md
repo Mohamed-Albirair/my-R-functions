@@ -8,6 +8,8 @@ To use any of the functions below, simply run the `source()` command and input t
 source(--function name--)
 ```
 
+___
+
 ## Misc Functions
 
   * [notin](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/notin.R): "not in"
