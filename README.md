@@ -1,6 +1,10 @@
 # my-R-functions
 Functions to automate common analyses
 
+## Misc Functions
+
+  * [notin](https://github.com/SenshiKudo/my-R-functions/blob/main/notin.R): "not in"
+
 ## Extracting Regression Analysis Outputs
 
 ### Linear, Single-Level Model Outputs
