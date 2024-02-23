@@ -28,8 +28,9 @@ Functions to automate common analyses
 
   * [probToRate](https://github.com/SenshiKudo/my-R-functions/blob/main/probToRate.R): from probability to rate
   
-  * [rateToProb](https://github.com/SenshiKudo/my-R-functions/blob/main/rateToProb.R): from rate to probability:
-
+  * [rateToProb](https://github.com/SenshiKudo/my-R-functions/blob/main/rateToProb.R): from rate to probability
+  
+  * [convTransProb](https://github.com/SenshiKudo/my-R-functions/blob/main/convTransProb.R): convert transition probabilities between different time units
   
 
   
