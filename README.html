@@ -385,8 +385,8 @@ argument)</em></p></li>
 <ul>
 <li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R">nonlinearOutputExtract</a></p></li>
 <li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R">modOutput</a>
-<em>(input <code>TRUE</code> to the <code>TorF</code>
-argument)</em></p></li>
+<em>(input <code>TRUE</code> to the <code>TorF</code> argument, to
+exponentiate coefficients)</em></p></li>
 </ul>
 </div>
 <div id="non-linear-multi-level-model-outputs" class="section level3">
@@ -400,13 +400,22 @@ argument)</em></p></li>
 <div id="epi-conversions" class="section level2">
 <h2>Epi Conversions</h2>
 <ul>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/probToRate.R">probToRate</a>:
-from probability to rate</p></li>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/rateToProb.R">rateToProb</a>:
-from rate to probability</p></li>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/convTransProb.R">convTransProb</a>:
-convert transition probabilities between different time units</p></li>
+<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/probToRate.R">probToRate</a>:
+from probability to rate</li>
 </ul>
+<p><span class="math display">\[r = \frac{-\ln (1 - p)}{t}\]</span></p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/rateToProb.R">rateToProb</a>:
+from rate to probability</li>
+</ul>
+<p><span class="math display">\[p = 1 - exp ^ {(r \times
+t)}\]</span></p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/convTransProb.R">convTransProb</a>:
+convert transition probabilities between different time units</li>
+</ul>
+<p><span class="math display">\[tp_b = 1 - (1 - tp_a) ^ {b /
+a}\]</span></p>
 </div>
 </div>
 

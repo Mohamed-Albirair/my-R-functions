@@ -28,7 +28,7 @@ ___
 
   * [nonlinearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R)
 
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(input `TRUE` to the `TorF` argument)*
+  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(input `TRUE` to the `TorF` argument, to exponentiate coefficients)*
   
 ### Non-Linear, Multi-Level Model Outputs
 
@@ -40,9 +40,13 @@ ___
 
   * [probToRate](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/probToRate.R): from probability to rate
   
+$$r = \frac{-\ln (1 - p)}{t}$$
+  
   * [rateToProb](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/rateToProb.R): from rate to probability
+  
+$$p = 1 - exp ^ {(r \times t)}$$
   
   * [convTransProb](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/convTransProb.R): convert transition probabilities between different time units
   
-
+$$tp_b = 1 - (1 - tp_a) ^ {b / a}$$
   
