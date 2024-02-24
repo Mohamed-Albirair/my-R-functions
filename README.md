@@ -3,7 +3,7 @@ Functions to automate common analyses.
 
 To use any of the functions below, simply run the `source()` command and input the corresponding URL (hyperlink) as an argument, as demonstrated below:
 
-```
+``` r
 # R code:
 source(--URL--)
 ```
@@ -20,19 +20,19 @@ ___
 
 ### Linear, Single-Level Model Outputs
 
-  * [lmOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/lmOutputExtract.R)
+  * [linearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/lmOutputExtract.R)
   
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(Input `FALSE` to the `TorF` argument)*
+  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(input `FALSE` to the `TorF` argument)*
   
 ### Non-Linear, Single-Level Model Outputs
 
-  * [logitOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R)
+  * [nonlinearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R)
 
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(Input `TRUE` to the `TorF` argument)*
+  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(input `TRUE` to the `TorF` argument)*
   
 ### Non-Linear, Multi-Level Model Outputs
 
-  * [logitMLMOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitMLMOutputExtract.R)
+  * [nonlinearMLMOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitMLMOutputExtract.R)
 
 ___
 

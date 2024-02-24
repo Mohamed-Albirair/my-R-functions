@@ -1,4 +1,4 @@
-logitMLMOutputExtract <- function(mod){
+nonlinearMLMOutputExtract <- function(mod){
       logitMLMOutput <- data.frame(exp(coefficients(summary(mod)))[, 1],
                                    exp(lme4::fixef(mod)[2] - 1.96 * coefficients(summary(mod)))[, 2],
                                    exp(lme4::fixef(mod)[2] + 1.96 * coefficients(summary(mod)))[, 2],
