@@ -1,11 +1,11 @@
 # my-R-functions
 Functions to automate common analyses.
 
-To use any of the functions below, simply run the `source()` command and input the corresponding hyperlink as an argument, as demonstrated below:
+To use any of the functions below, simply run the `source()` command and input the corresponding URL (hyperlink) as an argument, as demonstrated below:
 
 ```
 # R code:
-source(--function name--)
+source(--URL--)
 ```
 
 ___
@@ -14,7 +14,8 @@ ___
 
   * [notin](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/notin.R): "not in"
   
-  
+___
+
 ## Extracting Regression Analysis Outputs
 
 ### Linear, Single-Level Model Outputs
