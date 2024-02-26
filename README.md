@@ -5,14 +5,14 @@ To use any of the functions below, simply run the `source()` command and input t
 
 ``` r
 # R code:
-source(--URL--)
+source(<URL>)
 ```
 
 ___
 
 ## Misc Functions
 
-  * [notin](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/notin.R): "not in"
+  * [%!in%](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/notin.R): "not in"
   
 ___
 
@@ -22,13 +22,14 @@ ___
 
   * [linearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/lmOutputExtract.R)
   
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(input `FALSE` to the `TorF` argument)*
+  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R)
   
 ### Non-Linear, Single-Level Model Outputs
 
   * [nonlinearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R)
 
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R) *(input `TRUE` to the `TorF` argument, to exponentiate coefficients)*
+  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R)
+     - (input `TRUE` to the `expCoef` argument, to exponentiate coefficients)
   
 ### Non-Linear, Multi-Level Model Outputs
 

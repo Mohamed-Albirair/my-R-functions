@@ -1,6 +1,6 @@
 # A manual R function for extracting regression model parameters:
-modOutput <- function(mod, TorF = FALSE, cols = c(1:2, 5:6, 9)){
-      mod %>% parameters::parameters(., exponentiate = TorF) %>%
+modOutput <- function(mod, expCoef = FALSE, cols = c(1:2, 5:6, 9)){
+      mod %>% parameters::parameters(., exponentiate = expCoef) %>%
             as.data.frame() %>% # to allow further wrangling
             dplyr::select(cols) %>% # select desired columns in the desired order
             mutate(across(2:4, ~ ifelse(abs(.) < 0.001, scales::scientific(.), round(., 3))),
