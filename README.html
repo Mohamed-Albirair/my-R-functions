@@ -390,7 +390,7 @@ exponentiate coefficients)</li>
 </ul></li>
 </ul>
 <pre class="r"><code>source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
-mod &lt;- lm(y ~ a + bx, data) # desired regression model
+mod &lt;- glm(y ~ a + bx, data, family = &lt;binomial, poisson... etc.&gt;) # desired regression model
 modOutput(mod, expCoef = TRUE) # for reporting the exponentiated output</code></pre>
 </div>
 <div id="non-linear-multi-level-model-outputs" class="section level3">

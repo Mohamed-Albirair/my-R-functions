@@ -35,7 +35,7 @@ modOutput(mod) # for reporting the output
 
 ``` r
 source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
-mod <- lm(y ~ a + bx, data) # desired regression model
+mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
 modOutput(mod, expCoef = TRUE) # for reporting the exponentiated output
 ```
 
