@@ -364,7 +364,7 @@ source(&lt;URL&gt;)</code></pre>
 <div id="misc-functions" class="section level2">
 <h2>Misc Functions</h2>
 <ul>
-<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/notin.R">%!in%</a>:
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R">%!in%</a>:
 “not in”</li>
 </ul>
 <hr />
@@ -374,25 +374,29 @@ source(&lt;URL&gt;)</code></pre>
 <div id="linear-single-level-model-outputs" class="section level3">
 <h3>Linear, Single-Level Model Outputs</h3>
 <ul>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/lmOutputExtract.R">linearOutputExtract</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R">modOutput</a></p></li>
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R">modOutput</a></li>
 </ul>
+<pre class="r"><code>source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+mod &lt;- lm(y ~ a + bx, data) # desired regression model
+modOutput(mod) # for reporting the output</code></pre>
 </div>
 <div id="non-linear-single-level-model-outputs" class="section level3">
 <h3>Non-Linear, Single-Level Model Outputs</h3>
 <ul>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R">nonlinearOutputExtract</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R">modOutput</a></p>
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R">modOutput</a>
 <ul>
 <li>(input <code>TRUE</code> to the <code>expCoef</code> argument, to
 exponentiate coefficients)</li>
 </ul></li>
 </ul>
+<pre class="r"><code>source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+mod &lt;- lm(y ~ a + bx, data) # desired regression model
+modOutput(mod, expCoef = TRUE) # for reporting the exponentiated output</code></pre>
 </div>
 <div id="non-linear-multi-level-model-outputs" class="section level3">
 <h3>Non-Linear, Multi-Level Model Outputs</h3>
 <ul>
-<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitMLMOutputExtract.R">nonlinearMLMOutputExtract</a></li>
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/logitMLMOutputExtract.R">nonlinearMLMOutputExtract</a></li>
 </ul>
 <hr />
 </div>
@@ -400,18 +404,18 @@ exponentiate coefficients)</li>
 <div id="epi-conversions" class="section level2">
 <h2>Epi Conversions</h2>
 <ul>
-<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/probToRate.R">probToRate</a>:
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/probToRate.R">probToRate</a>:
 from probability to rate</li>
 </ul>
 <p><span class="math display">\[r = \frac{-\ln (1 - p)}{t}\]</span></p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/rateToProb.R">rateToProb</a>:
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/rateToProb.R">rateToProb</a>:
 from rate to probability</li>
 </ul>
 <p><span class="math display">\[p = 1 - exp ^ {(r \times
 t)}\]</span></p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/convTransProb.R">convTransProb</a>:
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/convTransProb.R">convTransProb</a>:
 convert transition probabilities between different time units</li>
 </ul>
 <p><span class="math display">\[tp_b = 1 - (1 - tp_a) ^ {b /

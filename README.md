@@ -12,7 +12,7 @@ ___
 
 ## Misc Functions
 
-  * [%!in%](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/notin.R): "not in"
+  * [%!in%](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R): "not in"
   
 ___
 
@@ -20,34 +20,42 @@ ___
 
 ### Linear, Single-Level Model Outputs
 
-  * [linearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/lmOutputExtract.R)
+  * [modOutput](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
   
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R)
+``` r
+source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+mod <- lm(y ~ a + bx, data) # desired regression model
+modOutput(mod) # for reporting the output
+```
   
 ### Non-Linear, Single-Level Model Outputs
 
-  * [nonlinearOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitOutputExtract.R)
-
-  * [modOutput](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/modOutput.R)
+  * [modOutput](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
      - (input `TRUE` to the `expCoef` argument, to exponentiate coefficients)
-  
+
+``` r
+source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+mod <- lm(y ~ a + bx, data) # desired regression model
+modOutput(mod, expCoef = TRUE) # for reporting the exponentiated output
+```
+
 ### Non-Linear, Multi-Level Model Outputs
 
-  * [nonlinearMLMOutputExtract](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/logitMLMOutputExtract.R)
+  * [nonlinearMLMOutputExtract](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/logitMLMOutputExtract.R)
 
 ___
 
 ## Epi Conversions
 
-  * [probToRate](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/probToRate.R): from probability to rate
+  * [probToRate](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/probToRate.R): from probability to rate
   
 $$r = \frac{-\ln (1 - p)}{t}$$
   
-  * [rateToProb](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/rateToProb.R): from rate to probability
+  * [rateToProb](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/rateToProb.R): from rate to probability
   
 $$p = 1 - exp ^ {(r \times t)}$$
   
-  * [convTransProb](https://raw.githubusercontent.com/SenshiKudo/my-R-functions/main/convTransProb.R): convert transition probabilities between different time units
+  * [convTransProb](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/convTransProb.R): convert transition probabilities between different time units
   
 $$tp_b = 1 - (1 - tp_a) ^ {b / a}$$
   
