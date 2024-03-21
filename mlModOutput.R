@@ -1,8 +1,10 @@
-# A manual R function for extracting regression model parameters:
-modOutput <- function(mod,
-                      expCoef = FALSE,
-                      cols = c(1:2, 5:6, 9)){
-      mod %>% parameters::parameters(., exponentiate = expCoef) %>%
+# A manual R function for extracting regression multi-level model
+# fixed effects coefficients:
+mlModOutput <- function(mod,
+                        expCoef = FALSE,
+                        cols = c(1:2, 5:6, 9)){
+      mod %>% parameters::parameters(., exponentiate = expCoef,
+                                     effects = "fixed") %>%
             as.data.frame() %>% # to allow further wrangling
             dplyr::select(cols) %>% # select desired columns in the desired order
             mutate(across(2:4, ~ ifelse(abs(.) < 0.001, scales::scientific(.), round(., 3))),

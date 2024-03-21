@@ -14,6 +14,12 @@ ___
 
   * [%!in%](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R): "not in"
   
+  * [missSummary](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R): report missingness summary
+  
+``` r
+source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R)
+missSummary(data)
+```
 ___
 
 ## Extracting Regression Analysis Outputs
@@ -25,7 +31,7 @@ ___
 ``` r
 source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
 mod <- lm(y ~ a + bx, data) # desired regression model
-modOutput(mod) # for reporting the output
+modOutput(mod) # report output
 ```
   
 ### Non-Linear, Single-Level Model Outputs
@@ -36,12 +42,12 @@ modOutput(mod) # for reporting the output
 ``` r
 source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
 mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
-modOutput(mod, expCoef = TRUE) # for reporting the exponentiated output
+modOutput(mod, expCoef = TRUE) # report exponentiated output
 ```
 
 ### Non-Linear, Multi-Level Model Outputs
 
-  * [nonlinearMLMOutputExtract](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/logitMLMOutputExtract.R)
+  * [nonlinearMLMOutputExtract](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/nonlinearMLMOutputExtract.R)
 
 ___
 
