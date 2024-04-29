@@ -364,24 +364,28 @@ source(&lt;URL&gt;)</code></pre>
 <div id="misc-functions" class="section level2">
 <h2>Misc Functions</h2>
 <ul>
-<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R">%!in%</a>:
-“not in”</li>
+<li><p><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R">%!in%</a>:
+“not in”</p></li>
+<li><p><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R">missSummary</a>:
+report missingness summary</p></li>
 </ul>
+<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R&quot;)
+missSummary(data)</code></pre>
 <hr />
 </div>
 <div id="extracting-regression-analysis-outputs" class="section level2">
 <h2>Extracting Regression Analysis Outputs</h2>
-<div id="linear-single-level-model-outputs" class="section level3">
-<h3>Linear, Single-Level Model Outputs</h3>
+<div id="single-level-model-outputs" class="section level3">
+<h3>Single-Level Model Outputs</h3>
 <ul>
 <li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R">modOutput</a></li>
 </ul>
-<pre class="r"><code>source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R&quot;)
 mod &lt;- lm(y ~ a + bx, data) # desired regression model
-modOutput(mod) # for reporting the output</code></pre>
+modOutput(mod) # report output</code></pre>
 </div>
-<div id="non-linear-single-level-model-outputs" class="section level3">
-<h3>Non-Linear, Single-Level Model Outputs</h3>
+<div id="single-level-model-outputs-1" class="section level3">
+<h3>Single-Level Model Outputs</h3>
 <ul>
 <li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R">modOutput</a>
 <ul>
@@ -389,15 +393,19 @@ modOutput(mod) # for reporting the output</code></pre>
 exponentiate coefficients)</li>
 </ul></li>
 </ul>
-<pre class="r"><code>source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R&quot;)
 mod &lt;- glm(y ~ a + bx, data, family = &lt;binomial, poisson... etc.&gt;) # desired regression model
-modOutput(mod, expCoef = TRUE) # for reporting the exponentiated output</code></pre>
+modOutput(mod, expCoef = TRUE) # report exponentiated output</code></pre>
 </div>
-<div id="non-linear-multi-level-model-outputs" class="section level3">
-<h3>Non-Linear, Multi-Level Model Outputs</h3>
+<div id="report-absolute-fitted-values" class="section level3">
+<h3>Report Absolute Fitted Values</h3>
 <ul>
-<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/logitMLMOutputExtract.R">nonlinearMLMOutputExtract</a></li>
+<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R">calAbsFitValue</a></li>
 </ul>
+<pre class="r"><code>source(&quot;calAbsFitValue&quot;)
+mod &lt;- glm(y ~ a + bx, data, family = &lt;binomial, poisson... etc.&gt;) # desired regression model
+# report fitted values at point x = 4
+calAbsFitValue(model = mod, parms = (e.g., &quot;(Intercept) + a + b * 4&quot;))</code></pre>
 <hr />
 </div>
 </div>

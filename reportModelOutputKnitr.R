@@ -1,8 +1,8 @@
 # A function for producing publication-quality model outputs:
-reportOutput <- function(model,
-                         exp = c(TRUE, FALSE),
-                         n_digits = 3,
-                         caption_input = "") {
+reportModelOutputKnitr <- function(model,
+                                   exp = c(TRUE, FALSE),
+                                   n_digits = 3,
+                                   caption_input = "") {
       if(length(exp) > 1){
             stop("Specify input to exp argument: TRUE/FALSE")
       }

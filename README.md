@@ -17,37 +17,44 @@ ___
   * [missSummary](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R): report missingness summary
   
 ``` r
-source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R)
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R")
 missSummary(data)
 ```
 ___
 
 ## Extracting Regression Analysis Outputs
 
-### Linear, Single-Level Model Outputs
+### Single-Level Model Outputs
 
   * [modOutput](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
   
 ``` r
-source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R")
 mod <- lm(y ~ a + bx, data) # desired regression model
 modOutput(mod) # report output
 ```
   
-### Non-Linear, Single-Level Model Outputs
+### Single-Level Model Outputs
 
   * [modOutput](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
      - (input `TRUE` to the `expCoef` argument, to exponentiate coefficients)
 
 ``` r
-source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R")
 mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
 modOutput(mod, expCoef = TRUE) # report exponentiated output
 ```
 
-### Non-Linear, Multi-Level Model Outputs
+### Report Absolute Fitted Values
 
-  * [nonlinearMLMOutputExtract](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/nonlinearMLMOutputExtract.R)
+  * [calAbsFitValue](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R)
+  
+``` r
+source("calAbsFitValue")
+mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
+# report fitted values at point x = 4
+calAbsFitValue(model = mod, parms = (e.g., "(Intercept) + a + b * 4"))
+```
 
 ___
 
