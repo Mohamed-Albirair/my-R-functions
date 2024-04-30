@@ -1,5 +1,5 @@
 # A function to estimate absolute predicted values with confidence levels
-calcAbsFitValue <- function(model, parms, n_digits = 3){
+calcAbsFitValue <- function(model, parms, n_digits = 3) {
       as.data.frame(
             car::deltaMethod(model,
                              g.    = parms,
