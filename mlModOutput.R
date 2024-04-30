@@ -1,7 +1,14 @@
+#------------------------------------------------------------------------------#
+# EDA R Functions
+#
+# Author: Albirair
+# Last edited: Apr 30th, 2024
+#------------------------------------------------------------------------------#
+
 # A manual R function for extracting regression multi-level model
 # fixed effects coefficients:
 mlModOutput <- function(mod,
-                        expCoef = FALSE, # default for linear models
+                        expCoef = c(TRUE, FALSE), # default for linear models
                         cols = c(1:2, 5:6, 9)){
       mod %>% parameters::parameters(., exponentiate = expCoef,
                                      effects = "fixed") %>%

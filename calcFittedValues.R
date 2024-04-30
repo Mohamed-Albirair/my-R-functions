@@ -1,4 +1,11 @@
-# A manual function to extract predicted values and 95% CIs:
+#------------------------------------------------------------------------------#
+# EDA R Functions
+#
+# Author: Albirair
+# Last edited: Apr 30th, 2024
+#------------------------------------------------------------------------------#
+
+# A simple function to extract predicted values and 95% CIs:
 calcFittedValues <- function(mod, data){
       data %>% mutate(
             fitted_val = predict(mod, type = "response", newdata = .),

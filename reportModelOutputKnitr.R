@@ -1,3 +1,10 @@
+#------------------------------------------------------------------------------#
+# EDA R Functions
+#
+# Author: Albirair
+# Last edited: Apr 30th, 2024
+#------------------------------------------------------------------------------#
+
 # A function for producing publication-quality model outputs:
 reportModelOutputKnitr <- function(model,
                                    exp = c(TRUE, FALSE),

@@ -1,3 +1,10 @@
+#------------------------------------------------------------------------------#
+# EDA R Functions
+#
+# Author: Albirair
+# Last edited: Apr 30th, 2024
+#------------------------------------------------------------------------------#
+
 # A manual R function for extracting regression model parameters:
 modOutput <- function(mod,
                       expCoef = FALSE,

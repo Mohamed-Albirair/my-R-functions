@@ -1,3 +1,11 @@
+#------------------------------------------------------------------------------#
+# EDA R Functions
+#
+# Author: Albirair
+# Last edited: Apr 30th, 2024
+#------------------------------------------------------------------------------#
+
+# A manual function to format tables in publication quality
 kableOutput <- function(output, format = "latex", caption = NULL){
       output %>% 
             kableExtra::kbl(.,

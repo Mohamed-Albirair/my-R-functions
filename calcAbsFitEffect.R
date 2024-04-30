@@ -1,3 +1,10 @@
+#------------------------------------------------------------------------------#
+# EDA R Functions
+#
+# Author: Albirair
+# Last edited: Apr 30th, 2024
+#------------------------------------------------------------------------------#
+
 # A function to estimate absolute predicted values with confidence levels
 calcAbsFitValue <- function(model, parms, n_digits = 3) {
       as.data.frame(
