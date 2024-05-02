@@ -1,15 +1,18 @@
 #------------------------------------------------------------------------------#
 # Mathematical Modeling
 #
-# Author: Albirair
-# Last edited: Apr 30th, 2024
+# Author: Mohamed Albirair
+# Last edited: May 1st, 2024
 #------------------------------------------------------------------------------#
 
 # A function to calcate transition probabilities for different time units
-convTransProb <- function(ratio, oldTP){
-      newTP = 1 - (1 - oldTP) ^ ratio
-      # newTP is the transition probability over time period b we wish to estimate
-      # oldTP is the known probability over time period a 
-      # ratio is b:a (e.g., when converting from annual to monthly, ratio = 1/12)
-      return(newTP)
+
+#' @param ratio A numeric value indicating the ratio between the desired time
+#'  unit and the default time unit (e.g., when converting from annual to 
+#'  monthly, ratio = 1/12).
+#' @param transProb A numeric value indicating the value of the known 
+#'  probability over the default time unit.
+
+convTransProb <- function(oldTP, ratio){
+      1 - (1 - transProb) ^ ratio
 }
