@@ -24,25 +24,16 @@ ___
 
 ## Extracting Regression Analysis Outputs
 
-### Single-Level Model Outputs
+### Regression Model Output
 
-  * [modOutput](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
+  * [reportModelOutputKnitr](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/reportModelOutputKnitr.R)
+  
+    - Can work for single-, multi-level, linear and non-linear models!
   
 ``` r
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R")
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/reportModelOutputKnitr.R")
 mod <- lm(y ~ a + bx, data) # desired regression model
-modOutput(mod) # report output
-```
-  
-### Single-Level Model Outputs
-
-  * [modOutput](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R)
-     - (input `TRUE` to the `expCoef` argument, to exponentiate coefficients)
-
-``` r
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/modOutput.R")
-mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
-modOutput(mod, expCoef = TRUE) # report exponentiated output
+reportModelOutputKnitr(mod) # report output
 ```
 
 ### Report Absolute Fitted Values

@@ -19,6 +19,7 @@ calcAbsFitEffect <- function(model, parms, n_digits = 3) {
             car::deltaMethod(model,
                              g.    = parms,
                              vcov. = vcov(model))) %>%
-            select(1, LCL = 3, UCL = 4) %>%
-            dplyr::mutate(dplyr::across(tidyselect::everything(), ~ round(exp(.), n_digits)))
+            dplyr::select(1, LCL = 3, UCL = 4) %>%
+            dplyr::mutate(dplyr::across(tidyselect::everything(), ~ round(exp(.), n_digits))) %>% 
+            magrittr::set_rownames("Effect")
 }

@@ -45,9 +45,13 @@ reportModelOutputKnitr <- function(model,
             interpretCoef <- modelOutput %>% 
                   dplyr::select(estimate) %>% 
                   dplyr::mutate(estimate = 
-                               ifelse(estimate > 1,
-                                      scales::label_percent(big.mark = ",")(round(estimate - 1, 3)),
-                                      scales::label_percent(big.mark = ",")(1 - round(estimate, 3)))) %>%
+                                      case_when(row_number() == 1 ~ 
+                                                      scales::label_percent(big.mark = ",")(round(estimate - 1, 3)),
+                                                row_number() != 1 & estimate > 1 ~ 
+                                                      scales::label_percent(big.mark = ",")(round(estimate - 1, 3)),
+                                                row_number() != 1 & estimate < 1 ~
+                                                      scales::label_percent(big.mark = ",")(1 - round(estimate, 3)),
+                                                row_number() != 1 & estimate == 1 ~ "No effect!")) %>% 
                   dplyr::pull()
       }
       
