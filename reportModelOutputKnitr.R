@@ -5,8 +5,8 @@
 # Last edited: May 1st, 2024
 #------------------------------------------------------------------------------#
 
-# A function for producing publication-quality model outputs:
-#'
+#' @title A function for producing publication-quality regression model outputs
+#' @author Mohamed Albirair
 #' @param model The regression model of interest.
 #' @param exp A logical input, indicating whether to exponentiate coefficients
 #'  or not. Applies when the model is linear `(FALSE)` or non-linear `(TRUE)`.
@@ -16,26 +16,53 @@
 #'  the regression model output.
 #' @param caption_input A character variable for naming the regression model 
 #'  output table.
+#' @return The function yields 3 outputs:
+#'         1. A Knitr::kable output.
+#'         2. A raw output for furthe extraction; and
+#'         3. Exponentiated ceofficient values in % for easier interpretation.
 
 reportModelOutputKnitr <- function(model,
-                                   exp = c(TRUE, FALSE),
-                                   parms = names(coef(model)),
-                                   n_digits = 3,
-                                   caption_input = "") {
+                                   exp           = c(TRUE, FALSE),
+                                   parms         = names(coef(model)),
+                                   n_digits      = 3,
+                                   caption_input = "",
+                                   print_output  = TRUE
+                                   ) {
       if(length(exp) > 1){
             stop("Specify input to exp argument: TRUE/FALSE")
       }
       
-      model %>% broom.mixed::tidy(exponentiate = exp,
-                                  conf.int = TRUE,
-                                  effects = "fixed") %>%
+      modelOutput <- model %>% 
+            broom.mixed::tidy(exponentiate = exp,
+                              conf.int     = TRUE,
+                              effects      = "fixed") %>% 
             dplyr::select(term, estimate, conf.low, conf.high, p.value) %>%
-            mutate(across(last_col(), ~ ifelse(. < 0.001, "<0.001", round(., 3))),
-                   across(term, ~ parms)) %>% 
-            knitr::kable(digits    = c(0, rep(n_digits, 3), 0),
-                         booktabs  = TRUE,
-                         caption   = caption_input,
-                         col.names = c("Parameter", "Coefficient", "95% LCL", "95% UCL", "p-value")) %>%
-            kableExtra::kable_styling(latex_options = "striped") %>%
-            kableExtra::kable_styling(latex_options = "HOLD_position")
+            dplyr::mutate(dplyr::across(term, ~ parms),
+                   across(tidyselect::last_col(), ~ ifelse(. < 0.001, "<0.001", round(., 3))))
+      
+      # Interpretations
+      if(exp == TRUE){
+            interpretCoef <- modelOutput %>% 
+                  dplyr::select(estimate) %>% 
+                  dplyr::mutate(estimate = 
+                               ifelse(estimate > 1,
+                                      scales::label_percent(big.mark = ",")(round(estimate - 1, 3)),
+                                      scales::label_percent(big.mark = ",")(1 - round(estimate, 3)))) %>%
+                  dplyr::pull()
+      }
+      
+      # Knitting
+      if(print_output == TRUE){
+            modelOutput %>%
+                  knitr::kable(digits    = c(0, rep(n_digits, 3), 0),
+                               booktabs  = TRUE,
+                               caption   = caption_input,
+                               col.names = c("Parameter", "Coefficient", "95% LCL", "95% UCL", "p-value")) %>%
+                  kableExtra::kable_styling(latex_options = c("striped", "HOLD_position")) %>%
+                  print()
+      }
+      
+      # Save all outputs
+      outputs <- list(modelOutput   = modelOutput,
+                      interpretCoef = interpretCoef)
 }

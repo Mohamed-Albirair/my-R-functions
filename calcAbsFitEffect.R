@@ -5,7 +5,8 @@
 # Last edited: May 1st, 2024
 #------------------------------------------------------------------------------#
 
-# A function to estimate absolute predicted values with confidence levels
+#' @title A function to estimate absolute predicted values with confidence levels
+#' @author Mohamed Albirair
 
 #' @param model The regression model of interest.
 #' @param parms A character variable for defining the desired parameters for 
@@ -13,11 +14,11 @@
 #' @param n_digits A numeric variable indicating the number of digits in the 
 #'  output table.
 
-calcAbsFitValue <- function(model, parms, n_digits = 3) {
+calcAbsFitEffect <- function(model, parms, n_digits = 3) {
       as.data.frame(
             car::deltaMethod(model,
                              g.    = parms,
                              vcov. = vcov(model))) %>%
             select(1, LCL = 3, UCL = 4) %>%
-            mutate(across(everything(), ~ round(exp(.), n_digits)))
+            dplyr::mutate(dplyr::across(tidyselect::everything(), ~ round(exp(.), n_digits)))
 }
