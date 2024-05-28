@@ -17,9 +17,10 @@
 #' @param caption_input A character variable for naming the regression model 
 #'  output table.
 #' @return The function yields 3 outputs:
-#'         1. A Knitr::kable output.
-#'         2. A raw output for furthe extraction; and
-#'         3. Exponentiated ceofficient values in % for easier interpretation.
+#'         1. A Knitr::kable output (with @param print_output = TRUE)
+#'         2. A raw output for further extraction (call: `$modelOutput`); and
+#'         3. Exponentiated ceofficient values in % for easier interpretation 
+#'            (call: `$interpretCoef`).
 
 reportModelOutputKnitr <- function(model,
                                    exp           = c(TRUE, FALSE),
@@ -38,15 +39,20 @@ reportModelOutputKnitr <- function(model,
                               effects      = "fixed") %>% 
             dplyr::select(term, estimate, conf.low, conf.high, p.value) %>%
             dplyr::mutate(dplyr::across(term, ~ parms),
-                   across(tidyselect::last_col(), ~ ifelse(. < 0.001, "<0.001", round(., 3))))
+                          dplyr::across(
+                                      tidyselect::last_col(), ~ as.character(
+                                            ifelse(. < 0.001, "<0.001", round(., 3))
+                                            )
+                                      )
+                          )
       
       # Interpretations
       if(exp == TRUE){
             interpretCoef <- modelOutput %>% 
                   dplyr::select(estimate) %>% 
                   dplyr::mutate(estimate = 
-                                      case_when(row_number() == 1 ~ 
-                                                      scales::label_percent(big.mark = ",")(round(estimate - 1, 3)),
+                                      case_when(row_number() == 1 & estimate~ 
+                                                      scales::label_percent(big.mark = ",")(round(estimate, 3)),
                                                 row_number() != 1 & estimate > 1 ~ 
                                                       scales::label_percent(big.mark = ",")(round(estimate - 1, 3)),
                                                 row_number() != 1 & estimate < 1 ~
@@ -64,9 +70,8 @@ reportModelOutputKnitr <- function(model,
                                col.names = c("Parameter", "Coefficient", "95% LCL", "95% UCL", "p-value")) %>%
                   kableExtra::kable_styling(latex_options = c("striped", "HOLD_position")) %>%
                   print()
+      } else {
+            list(modelOutput   = modelOutput,
+                 interpretCoef = interpretCoef)
       }
-      
-      # Save all outputs
-      outputs <- list(modelOutput   = modelOutput,
-                      interpretCoef = interpretCoef)
 }
