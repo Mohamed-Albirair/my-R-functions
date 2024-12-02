@@ -29,7 +29,7 @@ reportModelOutputKnitr <- function(model,
                                    caption_input = "",
                                    print_output  = TRUE
                                    ) {
-      if(length(exp) > 1){
+      if (length(exp) > 1) {
             stop("Specify input to exp argument: TRUE/FALSE")
       }
       
@@ -47,7 +47,7 @@ reportModelOutputKnitr <- function(model,
                           )
       
       # Interpretations
-      if(exp == TRUE){
+      if (exp == TRUE) {
             interpretCoef <- modelOutput %>% 
                   dplyr::select(estimate) %>% 
                   dplyr::mutate(estimate = 
@@ -62,7 +62,7 @@ reportModelOutputKnitr <- function(model,
       }
       
       # Knitting
-      if(print_output == TRUE){
+      if (print_output == TRUE) {
             modelOutput %>%
                   knitr::kable(digits    = c(0, rep(n_digits, 3), 0),
                                booktabs  = TRUE,

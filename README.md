@@ -1,4 +1,5 @@
-# my-R-functions
+# My Custom Functions
+
 Functions to automate common analyses.
 
 To use any of the functions below, simply run the `source()` command and input the corresponding URL (hyperlink) as an argument, as demonstrated below:
@@ -13,7 +14,11 @@ ___
 ## Misc Functions
 
   * [%!in%](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R): "not in"
-  
+
+``` r
+source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R)
+```
+
   * [missSummary](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R): report missingness summary
   
 ``` r
@@ -22,7 +27,7 @@ missSummary(data)
 ```
 ___
 
-## Extracting Regression Analysis Outputs
+## Extract Regression Analysis Outputs
 
 ### Regression Model Output
 
