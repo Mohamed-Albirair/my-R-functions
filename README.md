@@ -1,3 +1,8 @@
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 # My Custom Functions
 
 Functions to automate common analyses.
@@ -16,7 +21,7 @@ ___
   * [%!in%](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R): "not in"
 
 ``` r
-source(https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R)
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R")
 ```
 
   * [missSummary](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/missSummary.R): report missingness summary
@@ -58,13 +63,19 @@ ___
 
   * [probToRate](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/probToRate.R): from probability to rate
   
-$$r = \frac{-\ln (1 - p)}{t}$$
+$$
+r = \frac{-\ln (1 - p)}{t}
+$$
   
   * [rateToProb](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/rateToProb.R): from rate to probability
   
-$$p = 1 - exp ^ {(r \times t)}$$
+$$
+p = 1 - exp ^ {(r \times t)}
+$$
   
   * [convTransProb](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/convTransProb.R): convert transition probabilities between different time units
   
-$$tp_b = 1 - (1 - tp_a) ^ {b / a}$$
+$$
+tp_b = 1 - (1 - tp_a) ^ {b / a}
+$$
   
