@@ -4,3 +4,7 @@ plugins:
 title: My Custom R Function
 description: A group of manual functions designed for EDA
 show_downloads: true
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
