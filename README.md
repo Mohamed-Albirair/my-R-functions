@@ -48,13 +48,13 @@ reportModelOutputKnitr(mod) # report output
 
 ### Report Absolute Fitted Values
 
-  * [calAbsFitValue](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R)
+  * [calc_abs_effect_val](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R)
   
 ``` r
-source("calAbsFitValue")
+source("calc_abs_effect_val")
 mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
-# report fitted values at point x = 4
-calAbsFitValue(model = mod, parms = (e.g., "(Intercept) + a + b * 4"))
+# e.g., report fitted values at point x = 4
+calc_abs_effect_val(model = mod, parms = (e.g., "(Intercept) + a + b * 4"))
 ```
 
 ___

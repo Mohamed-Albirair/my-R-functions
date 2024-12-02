@@ -7,10 +7,10 @@
 #' @param n_digits A numeric variable indicating the number of digits in the 
 #'  output table.
 
-calcAbsFitEffect <- function(model,
-                             params,
-                             exp = c(TRUE, FALSE),
-                             n_digits = 3) {
+calc_abs_effect_val <- function(model,
+                                params,
+                                exp = c(TRUE, FALSE),
+                                n_digits = 3) {
       as.data.frame(
             car::deltaMethod(model,
                              g.    = params,
