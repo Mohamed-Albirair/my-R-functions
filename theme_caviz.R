@@ -11,9 +11,9 @@ theme_caviz <- theme(
       axis.ticks.length = unit(0.5, "char"),  # longer ticks
       
       ## Horizontal axis changes
-      axis.line.x.top = element_line(size = 0.2),    # thinner axis lines
-      axis.line.x.bottom = element_line(size = 0.2), # thinner axis lines
-      axis.ticks.x = element_line(size = 0.2),       # thinner ticks
+      axis.line.x.top = element_line(linewidth = 0.2),    # thinner axis lines
+      axis.line.x.bottom = element_line(linewidth = 0.2), # thinner axis lines
+      axis.ticks.x = element_line(linewidth = 0.2),       # thinner ticks
       axis.text.x = element_text(color = "black", size = 12),
       ## match type of axis labels and titles
       axis.title.x.top = element_text(size = 12,
@@ -38,8 +38,8 @@ theme_caviz <- theme(
       ## Remove unhelpful gray background
       
       ## Gridlines 
-      panel.grid.major.x = element_line(color = "lightgray", size = 0.2),
-      panel.grid.major.y = element_line(color = "lightgray", size = 0.2), 
+      panel.grid.major.x = element_line(color = "lightgray", linewidth = 0.2),
+      panel.grid.major.y = element_line(color = "lightgray", linewidth = 0.2), 
       
       ## Faceting (small multiples)
       strip.background = element_blank(),

@@ -14,11 +14,14 @@ calc_abs_effect_val <- function(model,
       as.data.frame(
             car::deltaMethod(model,
                              g.    = params,
-                             vcov. = vcov(model))) %>%
+                             vcov. = vcov(model))
+            ) %>%
             dplyr::select(1, LCL = 3, UCL = 4) %>% 
             magrittr::set_rownames("Effect") %>% 
+            
             if (exp == TRUE) {
                   dplyr::mutate(dplyr::across(tidyselect::everything(), ~ round(exp(.), n_digits)))
+                  
             } else {
                   dplyr::mutate(dplyr::across(tidyselect::everything(), ~ round(., n_digits)))
             }
