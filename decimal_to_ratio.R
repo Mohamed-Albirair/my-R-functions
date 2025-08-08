@@ -6,7 +6,7 @@
 decimal_to_ratio <- function(decimal) {
       
       # Convert decimal to fraction
-      frac <- MASS::fractions(decimal)
+      frac <- MASS::fractions(round(x = decimal, digits = 1))
       
       # Extract numerator and denominator
       parts <- strsplit(attr(frac, "fracs"), "/")[[1]]
