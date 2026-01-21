@@ -1,6 +1,8 @@
 
 # `calc_abs_effect_val`: Compute Absolute Fitted Values with Confidence Intervals
 
+[link]()
+
 **Purpose**: This function calculates **absolute predicted values** (fitted values) from regression models for specific covariate combinations, with accompanying confidence intervals.
 
 ## Key Features
