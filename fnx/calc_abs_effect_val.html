@@ -11,7 +11,7 @@
 
 
 
-<title>README</title>
+<title>calc_abs_effect_val</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,102 +352,172 @@ display: none;
 </div>
 
 
-<div id="custom-r-functions-for-streamlined-analysis" class="section level1">
-<h1>Custom R Functions for Streamlined Analysis</h1>
-<p>A collection of R functions designed to automate common analytical
-tasks and improve workflow efficiency.</p>
-<div id="installation-usage" class="section level2">
-<h2>Installation &amp; Usage</h2>
-<p>Load any function directly into your R session using:</p>
-<pre class="r"><code>source(&quot;&lt;function-URL&gt;&quot;)</code></pre>
-<p>Replace <code>&lt;function-URL&gt;</code> with the corresponding raw
-GitHub link provided for each function.</p>
-<hr />
-</div>
-<div id="core-utilities" class="section level2">
-<h2>Core Utilities</h2>
-<div id="logical-operator-for-vectors" class="section level3">
-<h3>Logical Operator for Vectors</h3>
-<div id="in-source" class="section level4">
-<h4><code>%!in%</code> (<a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R">source</a>)</h4>
-<p>Logical complement to <code>%in%</code>. Returns TRUE for elements
-not present in a vector. Elements could single values or vectors.</p>
-<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R&quot;)
-c(&quot;a&quot;, &quot;b&quot;) %!in% c(&quot;b&quot;, &quot;c&quot;, &quot;d&quot;)  # returns: TRUE, FALSE</code></pre>
-</div>
-</div>
-<div id="data-completeness" class="section level3">
-<h3>Data Completeness</h3>
-<div id="report_missing-source" class="section level4">
-<h4><code>report_missing</code> (<a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_missing.R">source</a>)</h4>
-<p>Generates a comprehensive missingness report for data frames,
-including counts and percentages by variable.</p>
-<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_missing.R&quot;)
-report_missing(your_dataframe)</code></pre>
-<hr />
-</div>
-</div>
-</div>
-<div id="extract-regression-analysis-outputs" class="section level2">
-<h2>Extract Regression Analysis Outputs</h2>
-<div id="regression-model-output" class="section level3">
-<h3>Regression Model Output</h3>
+<div id="calc_abs_effect_val-compute-absolute-fitted-values-with-confidence-intervals" class="section level1">
+<h1><code>calc_abs_effect_val</code>: Compute Absolute Fitted Values
+with Confidence Intervals</h1>
+<p><strong>Purpose</strong>: This function calculates <strong>absolute
+predicted values</strong> (fitted values) from regression models for
+specific covariate combinations, with accompanying confidence
+intervals.</p>
+<div id="key-features" class="section level2">
+<h2>Key Features</h2>
 <ul>
-<li><p><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R">report_mod_out_knitr</a></p>
-<ul>
-<li><p>Can work for single-, multi-level, linear and non-linear
-models!</p></li>
-<li><p>This function is designed to:</p>
-<ul>
-<li><p>Report regression output coefficients</p></li>
-<li><p>Provide structured interpretation of the different
-outputs</p></li>
-<li><p>Allow extracting values from the model output and referencing
-them in embedded text descriptions using
-<code>in-line coing</code>.</p></li>
-<li><p>Produce a publication-quality regression output</p></li>
-</ul></li>
-</ul></li>
+<li><p>Works with any regression model supported by
+<code>car::deltaMethod()</code> (linear models, GLMs, mixed models,
+etc.)</p></li>
+<li><p>Defines any linear combination of model parameters using R
+formula syntax</p></li>
+<li><p>Back-transforms estimates for models with log-link
+functions</p></li>
+<li><p>Computes Delta Method-based confidence intervals for the
+predicted values</p></li>
+<li><p>Returns publication quality-formatted results with user-specified
+decimal precision</p></li>
 </ul>
-<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R&quot;)
-mod &lt;- glm(y ~ a + bx, data, , family = &lt;binomial, poisson... etc.&gt;) # desired regression model
-report_mod_out_knitr(mod) # report output</code></pre>
 </div>
-<div id="report-absolute-fitted-values" class="section level3">
-<h3>Report Absolute Fitted Values</h3>
-<ul>
-<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R">calc_abs_effect_val</a></li>
-</ul>
-<pre class="r"><code>source(&quot;calc_abs_effect_val&quot;)
-mod &lt;- glm(y ~ a + bx, data, family = &lt;binomial, poisson... etc.&gt;) # desired regression model
-# e.g., report fitted values at point x = 4
-calc_abs_effect_val(model = mod, parms = (e.g., &quot;(Intercept) + a + b * 4&quot;))</code></pre>
-<hr />
+<div id="mathematical-foundation" class="section level2">
+<h2>Mathematical Foundation</h2>
+<p>The function applies the <strong>Delta Method</strong> to compute:
+<span class="math display">\[
+\hat{y} = g(\hat{\beta})
+\]</span> with variance: <span class="math display">\[
+\text{Var}(\hat{y}) = \nabla g(\hat{\beta})^T \cdot
+\text{Var}(\hat{\beta}) \cdot \nabla g(\hat{\beta})
+\]</span> Where <span class="math inline">\(g(\cdot)\)</span> represents
+the linear combination of parameters specified in
+<code>params</code>.</p>
+</div>
+<div id="parameter-details" class="section level2">
+<h2>Parameter Details</h2>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="16%" />
+<col width="36%" />
+<col width="35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>model</code></td>
+<td>Regression object</td>
+<td>Fitted model (lm, glm, etc.)</td>
+<td><code>lm(y ~ x1 + x2, data)</code></td>
+</tr>
+<tr class="even">
+<td><code>params</code></td>
+<td>Character string</td>
+<td>Linear combination of parameters</td>
+<td><code>&quot;(Intercept) + age*50 + treatment*1&quot;</code></td>
+</tr>
+<tr class="odd">
+<td><code>exp</code></td>
+<td>Logical</td>
+<td>Exponentiate estimates (for log models)</td>
+<td><code>TRUE</code> for Poisson/logistic</td>
+</tr>
+<tr class="even">
+<td><code>n_digits</code></td>
+<td>Integer</td>
+<td>Decimal precision in output</td>
+<td><code>3</code> for 0.123</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="example-applications" class="section level2">
+<h2>Example Applications</h2>
+<pre class="r"><code># Load function
+source(&quot;https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R&quot;)</code></pre>
+<div id="example-1-linear-model-predict-at-specific-values" class="section level3">
+<h3>Example 1: Linear model, predict at specific values</h3>
+<pre class="r"><code>linear_model &lt;- lm(salary ~ experience + education, data = salary_data)
+calc_abs_effect_val(
+  model = linear_model,
+  params = &quot;(Intercept) + experience*10 + education*16&quot;,
+  exp = FALSE,
+  n_digits = 2
+)</code></pre>
+</div>
+<div id="example-2-logistic-model-exponentiate-to-get-odds" class="section level3">
+<h3>Example 2: Logistic model, exponentiate to get odds</h3>
+<pre class="r"><code>logistic_model &lt;- glm(disease ~ age + bmi, data = health_data, family = binomial)
+calc_abs_effect_val(
+  model = logistic_model,
+  params = &quot;(Intercept) + age*45 + bmi*25&quot;,
+  exp = TRUE,  # Exponentiate log-odds to get odds
+  n_digits = 4
+)</code></pre>
+</div>
+<div id="example-3-poisson-model-predict-expected-counts" class="section level3">
+<h3>Example 3: Poisson model, predict expected counts</h3>
+<pre class="r"><code>poisson_model &lt;- glm(count ~ time + dose, data = count_data, family = poisson)
+calc_abs_effect_val(
+  model = poisson_model,
+  params = &quot;(Intercept) + time*24 + dose*100&quot;,
+  exp = TRUE,  # Exponentiate log-rate to get rate
+  n_digits = 1
+)</code></pre>
 </div>
 </div>
-<div id="epi-conversions" class="section level2">
-<h2>Epi Conversions</h2>
+<div id="output-structure" class="section level2">
+<h2>Output Structure</h2>
+<p>The function returns a data frame with:</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/prob_to_rate.R">prob_to_rate</a>:
-from probability to rate</li>
+<li><p><strong>Estimate</strong>: Point prediction for the specified
+covariate combination</p></li>
+<li><p><strong>LCL</strong>: Lower 95% confidence limit</p></li>
+<li><p><strong>UCL</strong>: Upper 95% confidence limit</p></li>
 </ul>
-<p><span class="math display">\[
-r = \frac{-\ln (1 - p)}{t}
-\]</span></p>
+<pre class="r"><code># Sample output:
+#           Estimate   LCL   UCL
+# Effect     125.430 110.2 140.7</code></pre>
+</div>
+<div id="advanced-usage" class="section level2">
+<h2>Advanced Usage</h2>
+<div id="custom-standard-errors" class="section level3">
+<h3>Custom Standard Errors</h3>
+<pre class="r"><code># Use robust standard errors
+calc_abs_effect_val(
+  model = your_model,
+  params = &quot;(Intercept) + x1*value1 + x2*value2&quot;,
+  exp = FALSE
+)
+# The function automatically uses vcov(model) - replace with sandwich::vcovHC() if needed</code></pre>
+</div>
+<div id="multiple-contrasts" class="section level3">
+<h3>Multiple Contrasts</h3>
+<pre class="r"><code># Compute predictions for several scenarios
+scenarios &lt;- list(
+  &quot;Young_Low&quot; = &quot;(Intercept) + age*30 + bmi*22&quot;,
+  &quot;Old_High&quot; = &quot;(Intercept) + age*65 + bmi*32&quot;
+)
+
+lapply(scenarios, function(p) {
+  calc_abs_effect_val(model = model, params = p, exp = TRUE)
+})</code></pre>
+</div>
+</div>
+<div id="technical-notes" class="section level2">
+<h2>Technical Notes</h2>
 <ul>
-<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/rate_to_prob.R">rate_to_prob</a>:
-from rate to probability</li>
+<li><strong>Method</strong>: Uses the Delta Method via
+<code>car::deltaMethod()</code> for variance estimation</li>
+<li><strong>Assumptions</strong>: Requires model to have a
+<code>vcov()</code> method and support from
+<code>car::deltaMethod()</code></li>
+<li><strong>Limitations</strong>: Delta Method assumes asymptotic
+normality; may be less accurate with small samples</li>
+<li><strong>Alternatives</strong>: For non-linear combinations, consider
+simulation-based methods</li>
 </ul>
-<p><span class="math display">\[
-p = 1 - exp ^ {(r \times t)}
-\]</span></p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/conv_trans_prob.R">conv_trans_prob</a>:
-convert transition probabilities between different time units</li>
-</ul>
-<p><span class="math display">\[
-tp_b = 1 - (1 - tp_a) ^ {b / a}
-\]</span></p>
 </div>
 </div>
 

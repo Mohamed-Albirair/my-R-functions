@@ -1,35 +1,46 @@
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
-# My Custom Functions
 
-Functions to automate common analyses.
+# Custom R Functions for Streamlined Analysis
 
-To use any of the functions below, simply run the `source()` command and input the corresponding URL (hyperlink) as an argument, as demonstrated below:
+A collection of R functions designed to automate common analytical tasks and improve workflow efficiency.
+
+## Installation & Usage
+
+Load any function directly into your R session using:
 
 ``` r
-# R code:
-source(<URL>)
+source("<function-URL>")
 ```
+
+Replace `<function-URL>` with the corresponding raw GitHub link provided for each function.
 
 ___
 
-## Misc Functions
+## Core Utilities
 
-  * [%!in%](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R): "not in", a logical function to test whether object x is not included in object y.
+### Logical Operator for Vectors
+
+#### `%!in%` ([source](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R))
+  
+Logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could single values or vectors.
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R")
+c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
 ```
 
-  * [report_missing](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_missing.R): reports missingness in a data frame.
+### Data Completeness
+
+#### `report_missing` ([source](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_missing.R))
+  
+Generates a comprehensive missingness report for data frames, including counts and percentages by variable.
   
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_missing.R")
-report_missing(data)
+report_missing(your_dataframe)
 ```
+
 ___
 
 ## Extract Regression Analysis Outputs
