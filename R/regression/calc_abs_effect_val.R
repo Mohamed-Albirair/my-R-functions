@@ -1,11 +1,9 @@
 #' @title A function to estimate absolute predicted values with confidence levels
-#' @author Mohamed Albirair
+#' @author Mohamed Albirair, MBBS, MPH, PhD
 #' @param model The regression model of interest.
-#' @param parms A character variable for defining the desired parameters for 
-#'  calculating the absolute fitted values.
+#' @param parms A character variable for defining the desired parameters for calculating the absolute fitted values.
 #' @param exp A logical variable to indicate whether coefficients are to be exponentiated or not
-#' @param n_digits A numeric variable indicating the number of digits in the 
-#'  output table.
+#' @param n_digits A numeric variable indicating the number of digits in the output table.
 
 calc_abs_effect_val <- function(model,
                                 params,

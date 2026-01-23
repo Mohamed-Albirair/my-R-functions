@@ -1,17 +1,17 @@
 
-# `calc_abs_effect_val`: Compute Absolute Fitted Values with Confidence Intervals
+# `calc_abs_fit_val`: Compute Absolute Fitted Values with Confidence Intervals
 
-[link]()
+[link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/calc_abs_fit_val.R)
 
-**Purpose**: This function calculates **absolute predicted values** (fitted values) from regression models for specific covariate combinations, with accompanying confidence intervals.
+[Main Page](https://mohamed-albirair.github.io/my-R-functions/)
+
+**Purpose**: This function calculates **absolute predicted values** (fitted values) from regression models for specific covariate combinations, with accompanying confidence intervals. This is in contrast to the **relative predicted values** that are typically reported in regression model outputs.
 
 ## Key Features
 
-- Works with any regression model supported by `car::deltaMethod()` (linear models, GLMs, mixed models, etc.)
+- Works with any regression model family supported by `car::deltaMethod()` (`gaussian`, `binomial`, `poisson`... etc.)
 
-- Defines any linear combination of model parameters using R formula syntax
-
-- Back-transforms estimates for models with log-link functions
+- Allows exponentiation of estimates for models with log-link functions
 
 - Computes Delta Method-based confidence intervals for the predicted values
 
@@ -47,13 +47,16 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/c
 ```
 
 ### Example 1: Linear model, predict at specific values
+
+Using the `CASchools` data [link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/assets/datasets), this example shows the association between student/teacher ratio and math scores.
+
 ```r
 linear_model <- lm(salary ~ experience + education, data = salary_data)
 calc_abs_effect_val(
-  model = linear_model,
-  params = "(Intercept) + experience*10 + education*16",
-  exp = FALSE,
-  n_digits = 2
+      model    = linear_model,
+      params   = "(Intercept) + experience*10 + education*16",
+      exp      = FALSE,
+      n_digits = 2
 )
 ```
 
@@ -61,10 +64,10 @@ calc_abs_effect_val(
 ```r
 logistic_model <- glm(disease ~ age + bmi, data = health_data, family = binomial)
 calc_abs_effect_val(
-  model = logistic_model,
-  params = "(Intercept) + age*45 + bmi*25",
-  exp = TRUE,  # Exponentiate log-odds to get odds
-  n_digits = 4
+      model    = logistic_model,
+      params   = "(Intercept) + age*45 + bmi*25",
+      exp      = TRUE,  # Exponentiate log-odds to get odds
+      n_digits = 4
 )
 ```
 
@@ -72,10 +75,10 @@ calc_abs_effect_val(
 ```r
 poisson_model <- glm(count ~ time + dose, data = count_data, family = poisson)
 calc_abs_effect_val(
-  model = poisson_model,
-  params = "(Intercept) + time*24 + dose*100",
-  exp = TRUE,  # Exponentiate log-rate to get rate
-  n_digits = 1
+      model    = poisson_model,
+      params   = "(Intercept) + time*24 + dose*100",
+      exp      = TRUE,  # Exponentiate log-rate to get rate
+      n_digits = 1
 )
 ```
 
@@ -101,9 +104,9 @@ The function returns a data frame with:
 ```r
 # Use robust standard errors
 calc_abs_effect_val(
-  model = your_model,
-  params = "(Intercept) + x1*value1 + x2*value2",
-  exp = FALSE
+      model  = your_model,
+      params = "(Intercept) + x1*value1 + x2*value2",
+      exp    = FALSE
 )
 # The function automatically uses vcov(model) - replace with sandwich::vcovHC() if needed
 ```
@@ -112,12 +115,12 @@ calc_abs_effect_val(
 ```r
 # Compute predictions for several scenarios
 scenarios <- list(
-  "Young_Low" = "(Intercept) + age*30 + bmi*22",
-  "Old_High" = "(Intercept) + age*65 + bmi*32"
+      "Young_Low" = "(Intercept) + age*30 + bmi*22",
+      "Old_High"  = "(Intercept) + age*65 + bmi*32"
 )
 
 lapply(scenarios, function(p) {
-  calc_abs_effect_val(model = model, params = p, exp = TRUE)
+      calc_abs_effect_val(model = model, params = p, exp = TRUE)
 })
 ```
 
