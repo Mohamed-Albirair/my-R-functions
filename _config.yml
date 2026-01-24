@@ -37,15 +37,15 @@ baseurl: "/my-R-functions"  # Your repository name
 # Enforce HTTPS (recommended)
 enforce_ssl: "https://mohamed-albirair.github.io/my-R-functions"
 
-# # Theme Configuration
-# remote_theme: amitmerchant1990/reverie
-# plugins:
-#   - jekyll-remote-theme
-#   - jekyll-sitemap
-#   - jekyll-feed
-#   - jekyll-seo-tag
-#   - jekyll-paginate
-# 
+# Theme Configuration
+remote_theme: amitmerchant1990/reverie
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
 # # Build Settings
 # permalink: /:title/
 # markdown: kramdown
