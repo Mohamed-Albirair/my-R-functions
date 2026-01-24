@@ -37,49 +37,49 @@ baseurl: "/my-R-functions"  # Your repository name
 # Enforce HTTPS (recommended)
 enforce_ssl: "https://mohamed-albirair.github.io/my-R-functions"
 
-# Theme Configuration
-remote_theme: amitmerchant1990/reverie
-plugins:
-  - jekyll-remote-theme
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-paginate
-
-# Build Settings
-permalink: /:title/
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-
-sass:
-  style: :expanded
-
-# Pagination
-paginate: 6
-paginate_path: /page:num/
-
-# Navigation (customize this for your functions)
-navigation:
-  - title: Home
-    url: /
-  - title: Functions
-    url: /functions/
-  - title: Installation
-    url: /installation/
-  - title: Examples
-    url: /examples/
-  - title: About
-    url: /about/
-
-# Excluded files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - node_modules/
-  - vendor/
+# # Theme Configuration
+# remote_theme: amitmerchant1990/reverie
+# plugins:
+#   - jekyll-remote-theme
+#   - jekyll-sitemap
+#   - jekyll-feed
+#   - jekyll-seo-tag
+#   - jekyll-paginate
+# 
+# # Build Settings
+# permalink: /:title/
+# markdown: kramdown
+# kramdown:
+#   input: GFM
+#   syntax_highlighter: rouge
+#   syntax_highlighter_opts:
+#     css_class: 'highlight'
+# 
+# sass:
+#   style: :expanded
+# 
+# # Pagination
+# paginate: 6
+# paginate_path: /page:num/
+# 
+# # Navigation (customize this for your functions)
+# navigation:
+#   - title: Home
+#     url: /
+#   - title: Functions
+#     url: /functions/
+#   - title: Installation
+#     url: /installation/
+#   - title: Examples
+#     url: /examples/
+#   - title: About
+#     url: /about/
+# 
+# # Excluded files
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - LICENSE
+#   - README.md
+#   - node_modules/
+#   - vendor/
