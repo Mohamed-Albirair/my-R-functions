@@ -71,7 +71,7 @@ report_mod_out_knitr(mod) # report output
 
 #### calc_abs_effect_val ([source](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R))
 
-Computes absolute fitted values from regression models for specific parameter combinations. See [link](https://<username>.github.io/<repo-name>/fnx_doc/calc_abs_fit_val/calc_abs_fit_val.html) for documentation.
+Computes absolute fitted values from regression models for specific parameter combinations. See [link](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/fnx_doc/calc_abs_fit_val/calc_abs_fit_val.html) for documentation.
 
 ``` r
 source("calc_abs_effect_val")
