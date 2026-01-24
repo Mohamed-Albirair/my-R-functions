@@ -1,11 +1,9 @@
 
+# Overveiw
 
+This is a collection of R functions designed to automate common analytical tasks and improve workflow efficiency.
 
-# Custom R Functions for Streamlined Analysis
-
-A collection of R functions designed to automate common analytical tasks and improve workflow efficiency.
-
-## Installation & Usage
+## Installation and Usage
 
 Load any function directly into your R session using:
 
@@ -14,32 +12,6 @@ source("<function-URL>")
 ```
 
 Replace `<function-URL>` with the corresponding raw GitHub link provided for each function.
-
-___
-
-## Core Utilities
-
-### Logical Operator for Vectors
-
-#### `%!in%` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/notin.R))
-  
-Logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
-
-``` r
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/notin.R")
-c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
-```
-
-### Data Completeness
-
-#### `report_missing` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/report_missing.R))
-  
-Generates a comprehensive missingness report for data frames, including counts and percentages by variable.
-  
-``` r
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/report_missing.R")
-report_missing(your_dataframe)
-```
 
 ___
 
@@ -53,13 +25,11 @@ Extracts and formats regression outputs for publication-ready reporting. Compati
 
 Features:
 
-- Extracts coefficients with confidence intervals
-
 - Generates interpretative summaries
 
 - Enables inline referencing of estimates in text using `in-line coing`
 
-- Supports knitr integration
+- Supports knitr integration for publication-quality reporting
   
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R")
@@ -67,11 +37,11 @@ model <- glm(outcome ~ predictor1 + predictor2, data = df, family = <gaussian/bi
 report_mod_out_knitr(mod) # report output
 ```
 
-### Absolute Fitted Values Calculation and Reporting
+### Compute Absolute Fitted Values with Confidence Intervals
 
 #### `calc_abs_effect_val` ([link](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R))
 
-Computes absolute fitted values from regression models for specific parameter combinations. See [link](https://mohamed-albirair.github.io/my-R-functions/fnx_doc/calc_abs_fit_val/calc_abs_fit_val.html) for documentation.
+Computes absolute fitted values from regression models for specific parameter combinations. See [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/calc_abs_fit_val/calc_abs_fit_val.html) for documentation.
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
@@ -112,6 +82,32 @@ $$
   
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/conv_trans_prob.R")
+```
+
+___
+
+## Miscellaneous
+
+### Logical Operator for Vectors
+
+#### `%!in%` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/notin.R))
+  
+Logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
+
+``` r
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/notin.R")
+c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
+```
+
+### Data Completeness
+
+#### `report_missing` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/report_missing.R))
+  
+Generates a comprehensive missingness report for data frames, including counts and percentages by variable.
+  
+``` r
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/report_missing.R")
+report_missing(your_dataframe)
 ```
 
 <!-- Your content above -->
