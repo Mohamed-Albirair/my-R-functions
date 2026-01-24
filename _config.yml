@@ -175,8 +175,8 @@ plugins:
 #   blanklines: false
 #   profile: false
 # 
-# # Sass configuration
-# sass:
-#   quiet_deps: true
-#   silence_deprecations: ['import']
+# Sass configuration
+sass:
+  quiet_deps: true
+  silence_deprecations: ['import']
 

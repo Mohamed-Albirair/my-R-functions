@@ -1,14 +1,12 @@
 ---
 layout: default
-title: Check
+title: Compute Absolute Fitted Values with Confidence Intervals
 nav_order: 2
 
 permalink: /R/functions/regression/
 ---
 
-# Compute Absolute Fitted Values with Confidence Intervals
-
-## `calc_abs_fit_val`
+# Compute Absolute Fitted Values with Confidence Intervals, `calc_abs_fit_val`
 
 [Link to script](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/calc_abs_fit_val.R)
 
