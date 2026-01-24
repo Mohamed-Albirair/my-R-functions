@@ -10,76 +10,68 @@
 #   math_engine: mathjax
   
   
-#
-# Site Configuration for Reverie Theme
-#
+# Basic site info
+title: My Custom R Functions
+description: A collection of custom R functions for streamlined data analysis and reporting
+topnav_title: R Functions Library  # Appears in top navigation
+company_name: "© 2026 Mohamed Albirair"  # Footer text
 
-# Site Identity
-name: My Custom R Functions
-author: Mohamed Albirair, MBBS, MPH, PhD
-description: A collection of custom R functions for streamlined analysis
-avatar: /assets/img/portfolio/Mohamed-Albirair_050522_001-2.jpg
-
-# Social Links (footer)
-footer-links:
-  email: mtalbirair@gmail.com
-  github: Mohamed-Albirair/my-R-functions
-  linkedin: mohamed-albirair-0206bbb2
-  # Remove or comment out any you don't use
-
-# Analytics (optional - add if you want)
-# google_analytics: UA-XXXXXXXX-X
-
-# Site URL Configuration
-url: "https://mohamed-albirair.github.io"
-baseurl: "/my-R-functions"  # Your repository name
-
-# Enforce HTTPS (recommended)
-enforce_ssl: "https://mohamed-albirair.github.io/my-R-functions"
-
-# Theme Configuration
-remote_theme: amitmerchant1990/reverie
+# Theme configuration
+remote_theme: tomjoht/documentation-theme-jekyll
 plugins:
   - jekyll-remote-theme
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-paginate
 
-# Build Settings
-permalink: /:title/
+# Output and build settings
+output: web
+host: 127.0.0.1
+port: 4000
+
+# GitHub integration (update with your username)
+github_editme_path: Mohamed-Albirair/my-R-functions/blob/main/
+
+# Analytics (optional - remove if not needed)
+# google_analytics: UA-XXXXXXXX-X
+
+# File exclusions
+exclude:
+  - .idea/
+  - .gitignore
+  - vendor
+
+# Contact/feedback (optional)
+feedback_subject_line: R Functions Feedback
+feedback_email: mtalbirair@gmail.com
+
+# Markdown processing
 markdown: kramdown
 kramdown:
   input: GFM
+  auto_ids: true
+  hard_wrap: false
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
 
-sass:
-  style: :expanded
+# Collections (for tooltips if needed)
+collections:
+  tooltips:
+    output: false
 
-# Pagination
-paginate: 6
-paginate_path: /page:num/
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false  # Set to true if you want comments
+      search: true
+      sidebar: home_sidebar
+      topnav: topnav
 
-# # Navigation (customize this for your functions)
-# navigation:
-#   - title: Home
-#     url: /
-#   - title: Functions
-#     url: /functions/
-#   - title: Installation
-#     url: /installation/
-#   - title: Examples
-#     url: /examples/
-#   - title: About
-#     url: /about/
-# 
-# # Excluded files
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - LICENSE
-#   - README.md
-#   - node_modules/
-#   - vendor/
+# Sidebars available
+sidebars:
+  - home_sidebar
+  - functions_sidebar
+  - examples_sidebar
+
+# Remove show_downloads since this theme doesn't use it
+# show_downloads: true  # Delete this line
