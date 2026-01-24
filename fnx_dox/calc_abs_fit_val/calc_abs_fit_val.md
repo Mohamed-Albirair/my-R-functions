@@ -1,3 +1,10 @@
+---
+layout: default
+title: Check
+nav_order: 2
+
+permalink: /R/functions/regression/
+---
 
 # Compute Absolute Fitted Values with Confidence Intervals
 
