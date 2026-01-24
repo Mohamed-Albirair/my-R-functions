@@ -11,6 +11,9 @@
   
   
 title: "My Custom R Functions"
-remote_theme: tomjoht/documentation-theme-jekyll
+description: "R functions for data analysis"
+baseurl: "/my-R-functions"
+url: "https://mohamed-albirair.github.io"
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
