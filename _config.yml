@@ -17,7 +17,7 @@
 # Site Identity
 name: My Custom R Functions
 author: Mohamed Albirair, MBBS, MPH, PhD
-description: A collection of R functions for streamlined analysis
+description: A collection of custom R functions for streamlined analysis
 avatar: /assets/img/portfolio/Mohamed-Albirair_050522_001-2.jpg
 
 # Social Links (footer)
@@ -46,22 +46,22 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
-# # Build Settings
-# permalink: /:title/
-# markdown: kramdown
-# kramdown:
-#   input: GFM
-#   syntax_highlighter: rouge
-#   syntax_highlighter_opts:
-#     css_class: 'highlight'
-# 
-# sass:
-#   style: :expanded
-# 
-# # Pagination
-# paginate: 6
-# paginate_path: /page:num/
-# 
+# Build Settings
+permalink: /:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+sass:
+  style: :expanded
+
+# Pagination
+paginate: 6
+paginate_path: /page:num/
+
 # # Navigation (customize this for your functions)
 # navigation:
 #   - title: Home
