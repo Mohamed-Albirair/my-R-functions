@@ -37,6 +37,8 @@ exclude:
   - .idea/
   - .gitignore
   - vendor
+  - R/  # Add this to exclude R directory
+  - *.Rmd  # Add this to exclude all Rmd files
 
 # Contact/feedback (optional)
 feedback_subject_line: R Functions Feedback
