@@ -23,7 +23,7 @@ ___
 
 #### `%!in%` ([source](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R))
   
-Logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could single values or vectors.
+Logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/notin.R")
@@ -43,34 +43,36 @@ report_missing(your_dataframe)
 
 ___
 
-## Extract Regression Analysis Outputs
+## Regression Analysis Toolkit
 
-### Regression Model Output
+### Regression Model Output Reporting
 
-  * [report_mod_out_knitr](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R)
+#### `report_mod_out_knitr` ([source](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R))
   
-    - Can work for single-, multi-level, linear and non-linear models!
-    
-    - This function is designed to:
-    
-      * Report regression output coefficients
-      
-      * Provide structured interpretation of the different outputs
-      
-      * Allow extracting values from the model output and referencing them in embedded text descriptions using `in-line coing`.
-      
-      * Produce a publication-quality regression output 
+Extracts and formats regression outputs for publication-ready reporting. Compatible with linear, generalized linear, and mixed-effects models.
+
+Features:
+
+- Extracts coefficients with confidence intervals
+
+- Generates interpretative summaries
+
+- Enables inline referencing of estimates in text using `in-line coing`
+
+- Supports knitr integration
   
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R")
-mod <- glm(y ~ a + bx, data, , family = <binomial, poisson... etc.>) # desired regression model
+model <- glm(outcome ~ predictor1 + predictor2, data = df, family = <gaussian/binomial/poisson... etc>)
 report_mod_out_knitr(mod) # report output
 ```
 
-### Report Absolute Fitted Values
+### Absolute Fitted Values Calculation and Reporting
 
-  * [calc_abs_effect_val](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R)
-  
+#### calc_abs_effect_val ([source](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R))
+
+Computes absolute fitted values from regression models for specific parameter combinations. See [link](Documentation File: https://<username>.github.io/<repo-name>/fnx_doc/calc_abs_effect_val/calc_abs_effect_val.html) for documentation.
+
 ``` r
 source("calc_abs_effect_val")
 mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
