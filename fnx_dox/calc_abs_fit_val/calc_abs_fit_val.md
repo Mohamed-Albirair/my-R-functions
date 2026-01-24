@@ -8,7 +8,7 @@
 [Main Page](https://mohamed-albirair.github.io/my-R-functions/)
 
 ## Purpose
-This function calculates **absolute predicted values** (fitted values) from regression models for specific covariate combinations, with accompanying confidence intervals. This is in contrast to the **relative predicted values** that are typically reported in regression model outputs.
+This function calculates *absolute* predicted values (fitted values) from regression models for specific covariate combinations, with accompanying confidence intervals. This is in contrast to the *relative* predicted values that are typically reported in regression model outputs.
 
 ## Key Features
 
@@ -50,8 +50,6 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/c
 ```
 
 ### Example 1: Linear model, predict at specific values
-
-Using the `CASchools` data [link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/assets/datasets), this example shows the association between student/teacher ratio and math scores.
 
 ```r
 linear_model <- lm(salary ~ experience + education, data = salary_data)
