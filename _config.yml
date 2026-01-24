@@ -20,11 +20,11 @@
 
 
 # Site settings
-title: My Custom R Functions
-description: A collection of R functions for streamlined data analysis and reporting
-baseurl: "/my-R-functions"  # Your repository name
-url: "https://mohamed-albirair.github.io"  # Your GitHub Pages URL
-repository: Mohamed-Albirair/my-R-functions  # Your repository
+title: "My Custom R Functions"
+description: "A collection of R functions for streamlined data analysis and reporting"
+baseurl: "/my-R-functions"
+url: "https://mohamed-albirair.github.io"
+repository: "Mohamed-Albirair/my-R-functions"
 
 # Math support
 mathjax: true
@@ -34,25 +34,25 @@ permalink: pretty
 # Default layout for docs folder
 defaults:
   - scope:
-      path: ""  # Empty string means all files
+      path: ""
       type: "pages"
     values:
       layout: "default"
 
 # Exclusions
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - R/  # Exclude your R directory
-  - *.Rmd  # Exclude Rmd files
+  - ".sass-cache/"
+  - ".jekyll-cache/"
+  - "gemfiles/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules/"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
+  - "R/"
+  - "*.Rmd"
 
 # Set a path/url to a logo (optional)
 # logo: "/assets/images/logo.png"
@@ -77,8 +77,7 @@ heading_anchors: true
 
 # Navigation links
 aux_links:
-  "View on GitHub":
-    - "https://github.com/Mohamed-Albirair/my-R-functions"
+  "View on GitHub": "https://github.com/Mohamed-Albirair/my-R-functions"
 
 aux_links_new_tab: true
 
@@ -89,13 +88,13 @@ nav_sort: case_sensitive
 # External navigation links
 nav_external_links:
   - title: "GitHub Repository"
-    url: https://github.com/Mohamed-Albirair/my-R-functions
+    url: "https://github.com/Mohamed-Albirair/my-R-functions"
 
 # Footer settings
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: 'Copyright &copy; 2024 Mohamed Albirair. Distributed under MIT License.'
+footer_content: "Copyright &copy; 2024 Mohamed Albirair. Distributed under MIT License."
 
 last_edit_timestamp: true
 last_edit_time_format: "%b %e %Y at %I:%M %p"
@@ -113,19 +112,19 @@ color_scheme: nil
 # Callouts styling
 callouts:
   highlight:
-    color: yellow
+    color: "yellow"
   important:
-    title: Important
-    color: blue
+    title: "Important"
+    color: "blue"
   new:
-    title: New
-    color: green
+    title: "New"
+    color: "green"
   note:
-    title: Note
-    color: purple
+    title: "Note"
+    color: "purple"
   warning:
-    title: Warning
-    color: red
+    title: "Warning"
+    color: "red"
 
 # Markdown processing
 kramdown:
@@ -146,7 +145,8 @@ compress_html:
 # Sass settings
 sass:
   quiet_deps: true
-  silence_deprecations: ['import']
+  silence_deprecations:
+    - "import"
 
 # Required plugins
 plugins:
