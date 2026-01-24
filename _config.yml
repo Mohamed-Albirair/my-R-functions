@@ -19,45 +19,64 @@
 #   - jekyll-remote-theme
 
 
+# Theme configuration
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
 # Site settings
 title: "My Custom R Functions"
 description: "A collection of R functions for streamlined data analysis and reporting"
-baseurl: "/my-R-functions"
-url: "https://mohamed-albirair.github.io"
-repository: "Mohamed-Albirair/my-R-functions"
+baseurl: "/my-R-functions"  # Your repository name
+url: "https://mohamed-albirair.github.io"  # Your GitHub Pages URL
+repository: Mohamed-Albirair/my-R-functions  # Your repository
 
-# Math support
-mathjax: true
-
+# Permalinks
 permalink: pretty
 
-# Default layout for docs folder
+# Default layouts
 defaults:
   - scope:
-      path: ""
+      path: ""  # Applies to all files
       type: "pages"
     values:
       layout: "default"
 
 # Exclusions
 exclude:
-  - ".sass-cache/"
-  - ".jekyll-cache/"
-  - "gemfiles/"
-  - "Gemfile"
-  - "Gemfile.lock"
-  - "node_modules/"
-  - "vendor/bundle/"
-  - "vendor/cache/"
-  - "vendor/gems/"
-  - "vendor/ruby/"
-  - "R/"
-  - "*.Rmd"
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - bin/
+  - lib/
+  - "*.gemspec"
+  - "*.gem"
+  - LICENSE.txt
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README.md
+  - CODE_OF_CONDUCT.md
+  - docker-compose.yml
+  - Dockerfile
+  - fixtures/
+  - spec/
+  - tmp
+  - .rspec
+  - R/  # Exclude your R code directory
+  - "*.Rmd"  # Exclude Rmd files
 
-# Set a path/url to a logo (optional)
-# logo: "/assets/images/logo.png"
+# Logo (optional - remove or add your logo)
+# logo: "/assets/images/your-logo.png"
 
-# Enable search
+# Search configuration
 search_enabled: true
 search:
   heading_level: 2
@@ -69,66 +88,80 @@ search:
   button: false
   focus_shortcut_key: "k"
 
-# Enable copy button on code
+# Code copy button
 enable_copy_code_button: true
 
-# Enable heading anchors
+# Math support (Just the Docs supports KaTeX out of the box!)
+katex: true
+
+# Heading anchors
 heading_anchors: true
 
-# Navigation links
+# Navigation
 aux_links:
-  "View on GitHub": "https://github.com/Mohamed-Albirair/my-R-functions"
+  "View on GitHub":
+    - "https://github.com/Mohamed-Albirair/my-R-functions"
+  "Contact":
+    - "mailto:mtalbirair@gmail.com"
 
 aux_links_new_tab: true
-
-# Enable navigation
 nav_enabled: true
 nav_sort: case_sensitive
 
 # External navigation links
 nav_external_links:
   - title: "GitHub Repository"
-    url: "https://github.com/Mohamed-Albirair/my-R-functions"
+    url: https://github.com/Mohamed-Albirair/my-R-functions
+  - title: "Contact Email"
+    url: mailto:mtalbirair@gmail.com
 
-# Footer settings
+nav_error_report: false
+
+# Liquid configuration
+liquid:
+  error_mode: strict
+  strict_filters: true
+
+# Footer
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2024 Mohamed Albirair. Distributed under MIT License."
+# Customize your footer
+footer_content: 'Copyright © 2024 Mohamed Albirair. All rights reserved.'
 
 last_edit_timestamp: true
-last_edit_time_format: "%b %e %Y at %I:%M %p"
+last_edit_time_format: "%b %e %Y"
 
-# GitHub edit link
+# GitHub edit links
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/Mohamed-Albirair/my-R-functions"
 gh_edit_branch: "main"
 gh_edit_view_mode: "tree"
 
-# Color scheme (nil = light, "dark" = dark, or create custom)
+# Color scheme: "dark", "light" (default), or a custom scheme
 color_scheme: nil
 
-# Callouts styling
+# Callouts configuration
 callouts:
   highlight:
-    color: "yellow"
+    color: yellow
   important:
-    title: "Important"
-    color: "blue"
+    title: Important
+    color: blue
   new:
-    title: "New"
-    color: "green"
+    title: New
+    color: green
   note:
-    title: "Note"
-    color: "purple"
+    title: Note
+    color: purple
   warning:
-    title: "Warning"
-    color: "red"
+    title: Warning
+    color: red
 
 # Markdown processing
 kramdown:
-  math_engine: mathjax
+  math_engine: katex  # Just the Docs uses KaTeX for math
   syntax_highlighter_opts:
     block:
       line_numbers: false
@@ -142,15 +175,8 @@ compress_html:
   blanklines: false
   profile: false
 
-# Sass settings
+# Sass configuration
 sass:
   quiet_deps: true
-  silence_deprecations:
-    - "import"
+  silence_deprecations: ['import']
 
-# Required plugins
-plugins:
-  - jekyll-seo-tag
-  - jekyll-github-metadata
-  - jekyll-include-cache
-  - jekyll-sitemap
