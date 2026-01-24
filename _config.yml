@@ -10,11 +10,76 @@
 #   math_engine: mathjax
   
   
-title: My Custom R Function
-description: A group of manual functions designed for EDA
-show_downloads: true
-theme: jekyll-theme-minimal  # Clean and simple
+#
+# Site Configuration for Reverie Theme
+#
+
+# Site Identity
+name: My Custom R Functions
+author: Mohamed Albirair, MBBS, MPH, PhD
+description: A collection of R functions for streamlined analysis
+avatar: /assets/img/portfolio/Mohamed-Albirair_050522_001-2.jpg
+
+# Social Links (footer)
+footer-links:
+  email: mtalbirair@gmail.com
+  github: Mohamed-Albirair/my-R-functions
+  linkedin: mohamed-albirair-0206bbb2
+  # Remove or comment out any you don't use
+
+# Analytics (optional - add if you want)
+# google_analytics: UA-XXXXXXXX-X
+
+# Site URL Configuration
+url: "https://mohamed-albirair.github.io"
+baseurl: "/my-R-functions"  # Your repository name
+
+# Enforce HTTPS (recommended)
+enforce_ssl: "https://mohamed-albirair.github.io/my-R-functions"
+
+# Theme Configuration
+remote_theme: amitmerchant1990/reverie
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Build Settings
+permalink: /:title/
 markdown: kramdown
 kramdown:
   input: GFM
-  math_engine: mathjax
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+sass:
+  style: :expanded
+
+# Pagination
+paginate: 6
+paginate_path: /page:num/
+
+# Navigation (customize this for your functions)
+navigation:
+  - title: Home
+    url: /
+  - title: Functions
+    url: /functions/
+  - title: Installation
+    url: /installation/
+  - title: Examples
+    url: /examples/
+  - title: About
+    url: /about/
+
+# Excluded files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - node_modules/
+  - vendor/
