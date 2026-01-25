@@ -128,53 +128,53 @@ plugins:
 # 
 # # Customize your footer
 # footer_content: 'Developed by Mohamed Albirair, PhD.'
-# 
-# last_edit_timestamp: true
-# last_edit_time_format: "%b %e %Y"
-# 
-# # GitHub edit links
-# gh_edit_link: true
-# gh_edit_link_text: "Edit this page on GitHub"
-# gh_edit_repository: "https://github.com/Mohamed-Albirair/my-R-functions"
-# gh_edit_branch: "main"
-# gh_edit_view_mode: "tree"
-# 
-# # Color scheme: "dark", "light" (default), or a custom scheme
-# color_scheme: nil
-# 
-# # Callouts configuration
-# callouts:
-#   highlight:
-#     color: yellow
-#   important:
-#     title: Important
-#     color: blue
-#   new:
-#     title: New
-#     color: green
-#   note:
-#     title: Note
-#     color: purple
-#   warning:
-#     title: Warning
-#     color: red
-# 
-# # Markdown processing
-# kramdown:
-#   math_engine: katex  # Just the Docs uses KaTeX for math
-#   syntax_highlighter_opts:
-#     block:
-#       line_numbers: false
-# 
-# # HTML compression
-# compress_html:
-#   clippings: all
-#   comments: all
-#   endings: all
-#   startings: []
-#   blanklines: false
-#   profile: false
-# 
+
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y"
+
+# GitHub edit links
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/Mohamed-Albirair/my-R-functions"
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
+
+# Color scheme: "dark", "light" (default), or a custom scheme
+color_scheme: nil
+
+# Callouts configuration
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+# Markdown processing
+kramdown:
+  math_engine: katex  # Just the Docs uses KaTeX for math
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# HTML compression
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+
 # Sass configuration
 sass:
   quiet_deps: true

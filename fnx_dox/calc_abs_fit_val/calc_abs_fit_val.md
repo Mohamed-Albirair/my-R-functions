@@ -2,7 +2,6 @@
 layout: default
 title: Compute Absolute Fitted Values
 nav_order: 2
-
 permalink: /R/functions/regression/
 ---
 
