@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Compute Absolute Fitted Values with Confidence Intervals
+title: Compute Absolute Fitted Values
 nav_order: 2
 
 permalink: /R/functions/regression/
@@ -10,7 +10,9 @@ permalink: /R/functions/regression/
 
 [Link to script](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/calc_abs_fit_val.R)
 
-[Main Page](https://mohamed-albirair.github.io/my-R-functions/)
+[Main page](https://mohamed-albirair.github.io/my-R-functions/)
+
+[Author's portfolio](https://mohamed-albirair.github.io/portfolio/)
 
 ## Purpose
 This function calculates *absolute* predicted values (fitted values) from regression models for specific covariate combinations, with accompanying confidence intervals. This is in contrast to the *relative* predicted values that are typically reported in regression model outputs.
