@@ -38,3 +38,5 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 fnx/calc_abs_effect_val.html
+README.html
+fnx_dox/calc_abs_fit_val/calc_abs_fit_val.html

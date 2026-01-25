@@ -43,11 +43,11 @@ model <- glm(outcome ~ predictor1 + predictor2, data = df, family = <gaussian/bi
 report_mod_out_knitr(mod) # report output
 ```
 
-### Compute Absolute Fitted Values with Confidence Intervals
+### [Compute Absolute Fitted Values with Confidence Intervals](https://mohamed-albirair.github.io/my-R-functions/R/functions/regression/)
 
-#### `calc_abs_effect_val` ([link](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R))
+`calc_abs_fit_val` ([link](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R))
 
-Computes absolute fitted values from regression models for specific parameter combinations. See [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/calc_abs_fit_val/calc_abs_fit_val.html) for documentation.
+Computes absolute fitted values from regression models for specific parameter combinations. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/calc_abs_fit_val/calc_abs_fit_val.html).
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
@@ -60,7 +60,9 @@ ___
 
 ## Epi Conversions
 
-  * [prob_to_rate](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/prob_to_rate.R): from probability to rate
+### Convert from Probability to Rate
+
+[prob_to_rate](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/prob_to_rate.R)
   
 $$
 r = \frac{-\ln (1 - p)}{t}
@@ -70,7 +72,9 @@ $$
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/prob_to_rate.R")
 ```
 
-  * [rate_to_prob](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/rate_to_prob.R): from rate to probability
+### Convert from Rate to Probability
+
+[rate_to_prob](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/rate_to_prob.R)
   
 $$
 p = 1 - exp ^ {(r \times t)}
@@ -80,7 +84,8 @@ $$
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/rate_to_prob.R")
 ```
 
-  * [conv_trans_prob](hhttps://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R): convert transition probabilities between different time units
+### Convert Transition Probabilities between Different Time Units
+  * [conv_trans_prob](hhttps://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R)
 
 $$
 tp_b = 1 - (1 - tp_a) ^ {b / a}
@@ -92,11 +97,11 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/h
 
 ___
 
-## Miscellaneous
+## Miscellaneous Functions
 
 ### Logical Operator for Vectors
 
-#### `%!in%` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/notin.R))
+`%!in%` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/notin.R))
   
 Logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
 
@@ -107,7 +112,7 @@ c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
 
 ### Data Completeness
 
-#### `report_missing` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/report_missing.R))
+`report_missing` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/report_missing.R))
   
 Generates a comprehensive missingness report for data frames, including counts and percentages by variable.
   
