@@ -29,13 +29,13 @@ This function calculates *absolute* predicted values (fitted values) from regres
 ## Mathematical Foundation
 
 The function applies the **Delta Method** to compute:
-\[
+$$
 \hat{y} = g(\hat{\beta})
-\]
+$$
 with variance:
-\[
+$$
 \text{Var}(\hat{y}) = \nabla g(\hat{\beta})^T \cdot \text{Var}(\hat{\beta}) \cdot \nabla g(\hat{\beta})
-\]
+$$
 Where \(g(\cdot)\) represents the linear combination of parameters specified in `params`.
 
 ## Parameter Details
