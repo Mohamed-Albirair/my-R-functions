@@ -87,47 +87,47 @@ plugins:
 # #   rel_url: true
 # #   button: false
 # #   focus_shortcut_key: "k"
-# 
-# # Code copy button
-# enable_copy_code_button: true
-# 
-# # Math support (Just the Docs supports KaTeX out of the box!)
-# katex: true
-# 
-# # Heading anchors
-# heading_anchors: true
-# 
-# # Navigation
-# aux_links:
-#   "View on GitHub":
-#     - "https://github.com/Mohamed-Albirair/my-R-functions"
-#   "Contact":
-#     - "mailto:mtalbirair@gmail.com"
-# 
+
+# Code copy button
+enable_copy_code_button: true
+
+# Math support (Just the Docs supports KaTeX out of the box!)
+katex: true
+
+# Heading anchors
+heading_anchors: true
+
+# Navigation
+aux_links:
+  "View on GitHub":
+    - "https://github.com/Mohamed-Albirair/my-R-functions"
+  "Contact":
+    - "mailto:mtalbirair@gmail.com"
+
 # aux_links_new_tab: true
 # nav_enabled: true
 # nav_sort: case_sensitive #-------------------------------------------check here!
-# 
-# # External navigation links
-# nav_external_links:
-#   - title: "GitHub Repository"
-#     url: https://github.com/Mohamed-Albirair/my-R-functions
-#   - title: "Contact Email"
-#     url: mailto:mtalbirair@gmail.com
-# 
-# nav_error_report: false
-# 
-# # Liquid configuration
-# liquid:
-#   error_mode: strict
-#   strict_filters: true
-# 
-# # Footer
-# back_to_top: true
-# back_to_top_text: "Back to top"
-# 
-# # Customize your footer
-# footer_content: 'Developed by Mohamed Albirair, PhD.'
+
+# External navigation links
+nav_external_links:
+  - title: "GitHub Repository"
+    url: https://github.com/Mohamed-Albirair/my-R-functions
+  - title: "Contact Email"
+    url: mailto:mtalbirair@gmail.com
+
+nav_error_report: false
+
+# Liquid configuration
+liquid:
+  error_mode: strict
+  strict_filters: true
+
+# Footer
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Customize your footer
+footer_content: 'Developed by Mohamed Albirair, PhD.'
 
 last_edit_timestamp: true
 last_edit_time_format: "%b %e %Y"
