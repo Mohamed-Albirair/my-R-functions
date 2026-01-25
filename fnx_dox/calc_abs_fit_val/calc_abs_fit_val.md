@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Compute Absolute Fitted Values
-nav_order: 2
-permalink: /R/functions/regression/
+title: Compute Absolute Fitted Values from Regression Models
+nav_order: 3
+permalink: /fnx_dox/calc_abs_fit_val/
 ---
 
 # Compute Absolute Fitted Values with Confidence Intervals, `calc_abs_fit_val`

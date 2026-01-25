@@ -23,10 +23,8 @@ ___
 
 ## Regression Analysis Toolkit
 
-### Regression Model Output Reporting
+## [Regression Model Output Reporting](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/report_mod_out_knitr.md)
 
-#### `report_mod_out_knitr` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/report_mod_out_knitr.R))
-  
 Extracts and formats regression outputs for publication-ready reporting. Compatible with linear, generalized linear, and mixed-effects models.
 
 Features:
@@ -43,7 +41,7 @@ model <- glm(outcome ~ predictor1 + predictor2, data = df, family = <gaussian/bi
 report_mod_out_knitr(mod) # report output
 ```
 
-### [Compute Absolute Fitted Values with Confidence Intervals](https://mohamed-albirair.github.io/my-R-functions/R/functions/regression/)
+### [Compute Absolute Fitted Values with Confidence Intervals](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/calc_abs_fit_val/calc_abs_fit_val.md)
 
 `calc_abs_fit_val` ([link](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R))
 

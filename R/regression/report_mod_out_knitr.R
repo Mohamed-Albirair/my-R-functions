@@ -10,7 +10,7 @@
 #' @param model The regression model of interest.
 #' @param exp A logical input, indicating whether to exponentiate coefficients
 #'  or not. Applies when the model is linear `(FALSE)` or non-linear `(TRUE)`.
-#' @param parms A character vector for renaming covariates in the regression
+#' @param params A character vector for renaming covariates in the regression
 #'  model output. If not input is provided, it defaults to how R names them.
 #' @param digits A numeric input for determining the number of digits show in
 #'  the regression model output.
@@ -25,7 +25,7 @@
 report_mod_out_knitr <- function(
             model,
             exp           = c(TRUE, FALSE),
-            parms         = names(coef(model)),
+            params         = names(coef(model)),
             n_digits      = 3,
             caption_input = "",
             knitr_output  = c(TRUE, FALSE)
@@ -39,8 +39,8 @@ report_mod_out_knitr <- function(
             broom.mixed::tidy(exponentiate = exp,
                               conf.int     = TRUE,
                               effects      = "fixed") %>% 
-            dplyr::select(term, estimate, conf.low, conf.high, p.value) %>%
-            dplyr::mutate(dplyr::across(term, ~ parms),
+            dplyr::select(term, estimate, lcl = conf.low, ucl = conf.high, p_val = p.value) %>%
+            dplyr::mutate(dplyr::across(term, ~ params),
                           dplyr::across(
                                       tidyselect::last_col(), ~ as.character(
                                             ifelse(. < 0.001, "<0.001", round(., 3))
