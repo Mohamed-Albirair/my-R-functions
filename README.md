@@ -25,18 +25,18 @@ ___
 
 # Functions
 
-## [Report Statistical Regression Model Output](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/report_mod_out_knitr.R)
+## [Report Statistical Regression Model Output](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R)
 
 Extracts and reports statistical regression model outputs with publication-quality formatting. The function is compatible with linear, generalized linear, and mixed-effects models, and generates templates for output interpretation. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/).
   
 ``` r
-# Call function
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R")
-
 # Fit regression model
 model <- glm(formula = outcome ~ predictor1 + predictor2,
              data    = df,
              family  = <gaussian/binomial/poisson... etc.>)
+
+# Call function
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R")
 
 # Run function
 report_mod_out_knitr(model,
@@ -54,13 +54,13 @@ ___
 Computes absolute fitted values from regression models for specific parameter combinations. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/calc_abs_fit_val/calc_abs_fit_val.html).
 
 ``` r
-# Call function
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
-
 # Fit regression model
 mod <- glm(formula = y ~ a + bx,
            data    = df,
            family  = <gaussian/binomial/poisson... etc.>)
+
+# Call function
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
 
 # Run function
 # e.g., report fitted values at point x = 4

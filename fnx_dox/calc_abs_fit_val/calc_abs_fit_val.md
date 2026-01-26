@@ -49,14 +49,18 @@ Where $g(\cdot)$ represents the linear combination of parameters specified in `p
 ## Example Applications
 
 ```r
-# Load function
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/calc_abs_fit_val.R")
 ```
 
 ### Example 1: Linear model, predict at specific values
 
 ```r
-linear_model <- lm(salary ~ experience + education, data = salary_data)
+# Fit regression model
+linear_model <- lm(formula = salary ~ experience + education,
+                   data    = salary_data)
+
+# Run function
 calc_abs_effect_val(
       model    = linear_model,
       params   = "(Intercept) + experience*10 + education*16",
@@ -67,7 +71,12 @@ calc_abs_effect_val(
 
 ### Example 2: Logistic model, exponentiate to get odds
 ```r
-logistic_model <- glm(disease ~ age + bmi, data = health_data, family = binomial)
+# Fit regression model
+logistic_model <- glm(formula = disease ~ age + bmi,
+                      data    = health_data,
+                      family  = binomial)
+
+# Run function
 calc_abs_effect_val(
       model    = logistic_model,
       params   = "(Intercept) + age*45 + bmi*25",
@@ -78,7 +87,12 @@ calc_abs_effect_val(
 
 ### Example 3: Poisson model, predict expected counts
 ```r
-poisson_model <- glm(count ~ time + dose, data = count_data, family = poisson)
+# Fit regression model
+poisson_model <- glm(formula = count ~ time + dose,
+                     data    = count_data,
+                     family  = poisson)
+
+# Run function
 calc_abs_effect_val(
       model    = poisson_model,
       params   = "(Intercept) + time*24 + dose*100",
@@ -98,7 +112,7 @@ The function returns a data frame with:
 - **UCL**: Upper 95% confidence limit
 
 ```r
-# Sample output:
+# Sample (raw) output:
 #           Estimate   LCL   UCL
 # Effect     125.430 110.2 140.7
 ```

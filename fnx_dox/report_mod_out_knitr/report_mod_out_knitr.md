@@ -34,15 +34,23 @@ This function automates the generation of clean regression model outputs with co
 ## Example Applications
 
 ```r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
-linear_model <- lm(salary ~ experience + education, data = salary_data)
+```
+
+``` r
+# Fit regression model
+linear_model <- lm(formula = salary ~ experience + education,
+                   data    = salary_data)
+
+# Run function
 report_mod_out_knitr(
       model         = linear_model,
-      exp           = FALSE,
+      exp           = FALSE, # since the model is linear
       params        = c("Experience", "Edcuation"),
       n_digits      = 2,
       caption_input = "Association between salary, experience and education",
-      knitr_output  = TRUE
+      knitr_output  = TRUE # for knitted outputs
 )
 ```
 
