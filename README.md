@@ -73,7 +73,7 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/h
 rate_to_prob(time = 1, prob = 1.203973)
 ```
 
-### [Convert Transition Probabilities between Different Time Units](hhttps://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R)
+### [Convert Transition Probabilities between Different Time Units](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R)
 
 $$
 tp_b = 1 - (1 - tp_a) ^ {b / a}
@@ -106,7 +106,7 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/h
 report_missing(your_dataframe)
 ```
 
-### [Convert between annual and hourly salary rates](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/calc_salary.R)
+### [Convert between Annual and Hourly Salary Rates](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/calc_salary.R)
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/calc_salary.R")
@@ -114,4 +114,13 @@ calc_salary(val  = 75,       # salary value
             rate = "hourly", # value above is hourly rate
             days = 5,        # days worked
             fte  = 1)        # full-time equivalent, 100% 
+```
+
+## `ggplot2` Visualization Themes
+
+### [Chris Adoph's Theme](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/viz_ggplot/theme_caviz.R)
+
+``` r
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/viz_ggplot/theme_caviz.R")
+# add `theme_caviz` to your `ggplot` script
 ```
