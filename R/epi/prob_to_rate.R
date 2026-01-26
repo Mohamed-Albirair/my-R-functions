@@ -1,11 +1,9 @@
-#------------------------------------------------------------------------------#
-# Epi Conversions
-#
-# Author: Albirair
-# Last edited: Apr 30th, 2024
-#------------------------------------------------------------------------------#
 
-# Convert from probability to rate
+#' @title A function to convert from probability to rate
+#' @author Mohamed Albirair, PhD(c)
+#' @param time Ratio of time unit between target and reference metrics.
+#' @param prob Probability value at the reference time unit.
+#' Last edited: Apr 30th, 2024
 
 # Citation: Gidwani R, Russell LB. Estimating Transition Probabilities from Published Evidence:
 # A Tutorial for Decision Modelers. Pharmacoeconomics. 2020 Nov;38(11):1153-1164.

@@ -50,7 +50,7 @@ Where $g(\cdot)$ represents the linear combination of parameters specified in `p
 
 ```r
 # Load function
-source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/calcAbsFitValue.R")
+source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/calc_abs_fit_val.R")
 ```
 
 ### Example 1: Linear model, predict at specific values
