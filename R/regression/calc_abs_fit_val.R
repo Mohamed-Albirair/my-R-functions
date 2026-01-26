@@ -11,7 +11,7 @@ calc_abs_fit_val <- function(model,
                              n_digits = 3) {
       
       # Check
-      if (is.null(model) | is.null(params)){
+      if (is.null(model) | is.null(params)) {
             stop("Model and/or parameter values need to be specified for the function to run.")
       }
       
