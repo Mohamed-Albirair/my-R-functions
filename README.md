@@ -94,6 +94,7 @@ p = 1 - exp ^ {(r \times t)}
 $$
 
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/rate_to_prob.R")
 rate_to_prob(time = 1,
              rate = 1.203973) # returns 0.7
@@ -106,6 +107,7 @@ tp_b = 1 - (1 - tp_a) ^ {b / a}
 $$
   
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/conv_trans_prob.R")
 conv_trans_prob(tp    = 0.3,
                 ratio = 1 / 12) # This converts an annual 30% TP to a monthly TP of 2%
@@ -120,6 +122,7 @@ ___
 This is the logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
 
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/notin.R")
 c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
 ```
@@ -129,6 +132,7 @@ c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
 This function generates a comprehensive missingness report for data frames, including counts and percentages by variable.
   
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/report_missing.R")
 report_missing(your_dataframe)
 ```
@@ -136,6 +140,7 @@ report_missing(your_dataframe)
 ### [Convert between Annual and Hourly Salary Rates](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/calc_salary.R)
 
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/calc_salary.R")
 calc_salary(val  = 75,       # salary value
             rate = "hourly", # value above is hourly rate
@@ -151,6 +156,7 @@ ___
 ### [Chris Adoph's Theme](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/viz_ggplot/theme_caviz.R) (Modified)
 
 ``` r
+# Call theme
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/viz_ggplot/theme_caviz.R")
 # add `theme_caviz` to your `ggplot` script
 ```
