@@ -25,7 +25,7 @@
 report_mod_out_knitr <- function(
             model,
             exp           = c(TRUE, FALSE),
-            params         = names(coef(model)),
+            params        = names(coef(model)),
             n_digits      = 3,
             caption_input = "",
             knitr_output  = c(TRUE, FALSE)
