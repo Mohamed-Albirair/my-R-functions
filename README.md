@@ -25,7 +25,7 @@ ___
 
 # Functions
 
-## [Report Statistical Regression Model Output](https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R)
+## [Report Statistical Regression Model Output](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/report_mod_out_knitr.R)
 
 Extracts and reports statistical regression model outputs with publication-quality formatting. The function is compatible with linear, generalized linear, and mixed-effects models, and generates templates for output interpretation. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/).
   
