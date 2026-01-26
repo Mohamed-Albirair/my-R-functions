@@ -67,7 +67,7 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/h
 calc_abs_effect_val(model    = mod,
                     parms    = (e.g., "(Intercept) + a + b * 4"),
                     exp      = FALSE,
-                    n_digita = 3)
+                    n_digits = 3)
 ```
 
 ___
