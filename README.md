@@ -21,19 +21,11 @@ Replace `<function-URL>` with the corresponding raw GitHub link provided for eac
 
 ___
 
-# Utilities
+# Functions
 
-## [Regression Model Output Reporting](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/)
+## [Report Statistical Regression Model Output](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/)
 
-Extracts and formats regression outputs for publication-ready reporting. Compatible with linear, generalized linear, and mixed-effects models.
-
-Features:
-
-- Generates interpretative summaries
-
-- Enables inline referencing of estimates in text using `in-line coing`
-
-- Supports knitr integration for publication-quality reporting
+Extracts and reports statistical regression model outputs with publication-quality formatting. Compatible with linear, generalized linear, and mixed-effects models, and generates templates for output interpretation. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/).
   
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R")
@@ -58,9 +50,7 @@ ___
 
 ## Epi Conversions
 
-### Convert from Probability to Rate
-
-[prob_to_rate](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/prob_to_rate.R)
+### [Convert from Probability to Rate](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/prob_to_rate.R)
   
 $$
 r = \frac{-\ln (1 - p)}{t}
@@ -72,9 +62,7 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/h
 prob_to_rate(time = 1, prob = 0.3)
 ```
 
-### Convert from Rate to Probability
-
-[rate_to_prob](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/rate_to_prob.R)
+### [Convert from Rate to Probability](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/rate_to_prob.R)
   
 $$
 p = 1 - exp ^ {(r \times t)}
@@ -85,9 +73,7 @@ source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/h
 rate_to_prob(time = 1, prob = 1.203973)
 ```
 
-### Convert Transition Probabilities between Different Time Units
-
-[conv_trans_prob](hhttps://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R)
+### [Convert Transition Probabilities between Different Time Units](hhttps://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R)
 
 $$
 tp_b = 1 - (1 - tp_a) ^ {b / a}
@@ -102,27 +88,25 @@ ___
 
 ## Miscellaneous Functions
 
-### Logical Operator for Vectors
+### [Logical Operator for Vectors](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/notin.R)
 
-`%!in%` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/notin.R)). This is the logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
+This is the logical complement to `%in%`. Returns TRUE for elements not present in a vector. Elements could be single values or vectors.
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/notin.R")
 c("a", "b") %!in% c("b", "c", "d")  # returns: TRUE, FALSE
 ```
 
-### Report Data Completeness
+### [Report Data Completeness](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/report_missing.R)
 
-`report_missing` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/report_missing.R)). This function generates a comprehensive missingness report for data frames, including counts and percentages by variable.
+This function generates a comprehensive missingness report for data frames, including counts and percentages by variable.
   
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/report_missing.R")
 report_missing(your_dataframe)
 ```
 
-### Convert between annual and hourly salary rates
-
-`calc_salary` ([link](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/calc_salary.R))
+### [Convert between annual and hourly salary rates](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/misc/calc_salary.R)
 
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/misc/calc_salary.R")
