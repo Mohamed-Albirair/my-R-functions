@@ -30,8 +30,15 @@ ___
 Extracts and reports statistical regression model outputs with publication-quality formatting. The function is compatible with linear, generalized linear, and mixed-effects models, and generates templates for output interpretation. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/report_mod_out_knitr/).
   
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/main/report_mod_out_knitr.R")
-model <- glm(outcome ~ predictor1 + predictor2, data = df, family = <gaussian/binomial/poisson... etc>)
+
+# Fit regression model
+model <- glm(formula = outcome ~ predictor1 + predictor2,
+             data    = df,
+             family  = <gaussian/binomial/poisson... etc.>)
+
+# Run function
 report_mod_out_knitr(model,
                      exp           = TRUE,
                      params        = names(coef(model)),
@@ -42,13 +49,20 @@ report_mod_out_knitr(model,
 
 ___
 
-## [Compute Absolute Fitted Values with Confidence Intervals](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/calc_abs_effect_val.R)
+## [Compute Absolute Fitted Values with Confidence Intervals](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/calc_abs_fit_val.R)
 
 Computes absolute fitted values from regression models for specific parameter combinations. For documentation, see [link](https://mohamed-albirair.github.io/my-R-functions/fnx_dox/calc_abs_fit_val/calc_abs_fit_val.html).
 
 ``` r
+# Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
-mod <- glm(y ~ a + bx, data, family = <binomial, poisson... etc.>) # desired regression model
+
+# Fit regression model
+mod <- glm(formula = y ~ a + bx,
+           data    = df,
+           family  = <gaussian/binomial/poisson... etc.>)
+
+# Run function
 # e.g., report fitted values at point x = 4
 calc_abs_effect_val(model    = mod,
                     parms    = (e.g., "(Intercept) + a + b * 4"),
@@ -70,7 +84,7 @@ $$
 # Call function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/prob_to_rate.R")
 prob_to_rate(time = 1,
-             prob = 0.3)
+             prob = 0.7) # returns 1.203973
 ```
 
 ### [Convert from Rate to Probability](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/rate_to_prob.R)
@@ -82,7 +96,7 @@ $$
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/rate_to_prob.R")
 rate_to_prob(time = 1,
-             prob = 1.203973)
+             rate = 1.203973) # returns 0.7
 ```
 
 ### [Convert Transition Probabilities between Different Time Units](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/epi/conv_trans_prob.R)
@@ -94,7 +108,7 @@ $$
 ``` r
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/epi/conv_trans_prob.R")
 conv_trans_prob(tp    = 0.3,
-                ratio = 1 / 12) # This converts an annual 30% TP to a monthly TP
+                ratio = 1 / 12) # This converts an annual 30% TP to a monthly TP of 2%
 ```
 
 ___
@@ -127,6 +141,7 @@ calc_salary(val  = 75,       # salary value
             rate = "hourly", # value above is hourly rate
             days = 5,        # days worked
             fte  = 1)        # full-time equivalent, 100% 
+# Returns: "Annual salary = 156,000.0"
 ```
 
 ___
