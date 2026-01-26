@@ -22,14 +22,12 @@
 #'         3. Exponentiated coefficient values in % for easier interpretation 
 #'            (call: `$interpret_coef`).
 
-report_mod_out_knitr <- function(
-            model,
-            exp           = c(TRUE, FALSE),
-            params        = names(coef(model)),
-            n_digits      = 3,
-            caption_input = "",
-            knitr_output  = c(TRUE, FALSE)
-            ) {
+report_mod_out_knitr <- function(model,
+                                 exp           = c(TRUE, FALSE),
+                                 params        = names(coef(model)),
+                                 n_digits      = 3,
+                                 caption_input = "",
+                                 knitr_output  = c(TRUE, FALSE)) {
       
       if (length(exp) > 1) {
             stop("Specify input to exp argument: TRUE/FALSE")
