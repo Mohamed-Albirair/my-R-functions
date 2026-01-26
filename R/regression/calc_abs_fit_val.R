@@ -15,11 +15,9 @@ calc_abs_fit_val <- function(model,
             stop("Model and/or parameter values need to be specified for the function to run.")
       }
       
-      as.data.frame(
-            car::deltaMethod(model,
-                             g.    = params,
-                             vcov. = vcov(model))
-            ) %>%
+      as.data.frame(car::deltaMethod(model,
+                                     g.    = params,
+                                     vcov. = vcov(model))) %>%
             dplyr::select(1, LCL = 3, UCL = 4) %>% 
             magrittr::set_rownames("Effect") %>% 
             
