@@ -7,7 +7,7 @@ permalink: /fnx_dox/report_mod_out_knitr/
 
 # Report Statistical Regression Model Output, `report_mod_out_knitr`
 
-[Link to script](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/report_mod_out_knitr.R))
+[Link to script](https://github.com/Mohamed-Albirair/my-R-functions/blob/main/R/regression/report_mod_out_knitr.R)
   
 [Main page](https://mohamed-albirair.github.io/my-R-functions/)
 
@@ -24,14 +24,14 @@ This function automates the generation of clean regression model outputs with co
 
 ## Parameter Details
 
-| Parameter      | Type              | Description                             | Example                                |
-|----------------|-------------------|-----------------------------------------|----------------------------------------|
-| `model`        | Regression object | Fitted model (lm, glm, etc.)            | `lm(y ~ x1 + x2, data)`                |
-| `exp`          | Logical           | Exponentiate estimates (for log models) | `TRUE` for Poisson/logistic            |
-| `params`       | Character string  | Linear combination of parameters        | `"(Intercept) + age*50 + treatment*1"` |
-| `n_digits`     | Integer           | Decimal precision in output             | `3` for 0.123                          |
-| `caption_input`| Character         | User-defined output label               | Default to none                        |
-| `knitr_output` | Logical           | Produces publication-quality outputs    | `TRUE` for knitting                    |
+| Parameter      | Type              | Description                             | Example                             |
+|----------------|-------------------|-----------------------------------------|-------------------------------------|
+| `model`        | Regression object | Fitted model (lm, glm, etc.)            | `lm(y ~ x1 + x2, data)`             |
+| `exp`          | Logical           | Exponentiate estimates (for log models) | `TRUE` for Poisson/logistic         |
+| `params`       | Character string  | Parameters' labels in output table      | `"Experience", "Edcuation"`... etc. |
+| `n_digits`     | Integer           | Decimal precision in output             | `3` for 0.123                       |
+| `caption_input`| Character         | User-defined output label               | Default to none                     |
+| `knitr_output` | Logical           | Produces publication-quality outputs    | `TRUE` for knitting                 |
 
 ## Example Applications
 
@@ -47,7 +47,7 @@ linear_model <- lm(salary ~ experience + education, data = salary_data)
 report_mod_out_knitr(
       model         = linear_model,
       exp           = FALSE,
-      params        = "(Intercept) + experience*10 + education*16",
+      params        = c("Experience", "Edcuation"),
       n_digits      = 2,
       caption_input = "Association between salary, experience and education",
       knitr_output  = TRUE
