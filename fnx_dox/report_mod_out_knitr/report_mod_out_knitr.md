@@ -11,8 +11,6 @@ permalink: /fnx_dox/report_mod_out_knitr/
   
 [Main page](https://mohamed-albirair.github.io/my-R-functions/)
 
-[Author's portfolio](https://mohamed-albirair.github.io/portfolio/)
-
 ## Purpose
 This function automates the generation of clean regression model outputs with coefficient values, 95% CIs and p-values.
 
@@ -36,13 +34,7 @@ This function automates the generation of clean regression model outputs with co
 ## Example Applications
 
 ```r
-# Load function
 source("https://raw.githubusercontent.com/Mohamed-Albirair/my-R-functions/refs/heads/main/R/regression/report_mod_out_knitr.R")
-```
-
-### Example
-
-```r
 linear_model <- lm(salary ~ experience + education, data = salary_data)
 report_mod_out_knitr(
       model         = linear_model,
