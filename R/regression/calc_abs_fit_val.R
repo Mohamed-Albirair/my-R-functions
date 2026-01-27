@@ -27,6 +27,6 @@ calc_abs_fit_val <- function(model,
                   
             } else {
                   dplyr::mutate(dplyr::across(.cols = tidyselect::everything(),
-                                              .funs = ~ round(., n_digits)))
+                                              .fns  = ~ round(., n_digits)))
             }
 }
