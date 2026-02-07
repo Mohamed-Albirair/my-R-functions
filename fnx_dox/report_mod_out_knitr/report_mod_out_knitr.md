@@ -22,14 +22,14 @@ This function automates the generation of clean regression model outputs with co
 
 ## Parameter Details
 
-| Parameter      | Type              | Description                             | Remarks                                    |
-|----------------|-------------------|-----------------------------------------|--------------------------------------------|
-| `model`        | Regression object | Fitted model (lm, glm, etc.)            | `lm(y ~ x1 + x2, data)`                    |
-| `exp`          | Logical           | Exponentiate estimates (for log models) | `TRUE` for Poisson/logistic                |
-| `params`       | Character string  | Parameters' labels in output table      | User-defined labels for `x1`, `x2`... etc. |
-| `n_digits`     | Integer           | Decimal precision in output             | `3` for 0.123                              |
-| `caption_input`| Character         | Input for the `caption` argument.       | User-defined output label, default to none |
-| `knitr_output` | Logical           | Produces publication-quality outputs    | `TRUE` for knitting                        |
+| Parameter      | Type              | Description                             | Remarks                            |
+|----------------|-------------------|-----------------------------------------|------------------------------------|
+| `model`        | Regression object | Fitted model (lm, glm, etc.)            | `lm(y ~ x1 + x2, data)`            |
+| `exp`          | Logical           | Exponentiate estimates (for log models) | `TRUE` for Poisson/logistic        |
+| `params`       | Character string  | Parameters' labels in output table      | User-defined labels for `x1`, `x2` |
+| `n_digits`     | Integer           | Decimal precision in output             | `3` for 0.123                      |
+| `caption_input`| Character         | Input for the `caption` argument.       | User-defined output label          |
+| `knitr_output` | Logical           | Produces publication-quality outputs    | `TRUE` for knitting                |
 
 ## Example Applications
 
