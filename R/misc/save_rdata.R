@@ -7,8 +7,8 @@
 
 
 
-save_index_rdata <- function(obj_inpt,
-                             file_path) {
+save_rdata <- function(obj_inpt,
+                       file_path) {
 
       # Get the name of the input object
       obj_name <- deparse(substitute(obj_inpt))
