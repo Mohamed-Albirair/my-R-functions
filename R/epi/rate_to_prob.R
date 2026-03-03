@@ -10,6 +10,6 @@
 # doi: 10.1007/s40273-020-00937-z. Erratum in: Pharmacoeconomics. 2020 Nov;38(11):1277.
 # doi: 10.1007/s40273-020-00958-8. PMID: 32797380; PMCID: PMC7426391.
 
-rate_to_prob <- function(time, rate){
+rate_to_prob <- function(rate, time = 1){
       1 - exp(-time * rate)
 }
