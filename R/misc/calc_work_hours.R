@@ -23,35 +23,3 @@ calc_work_hours <- function(strt,
       print(biz_hours)
       
 }
-
-
-# National service
-calc_work_hours(strt = "2011-11-01 08:00:00",
-                end  = "2012-11-01 16:00:00",
-                wknd_inpt = c("Friday", "Saturday"))
-
-# 
-calc_work_hours(strt = "2013-05-02 08:00:00",
-                end  = "2014-05-02 16:00:00",
-                wknd_inpt = c("Friday", "Saturday"))
-
-# 
-calc_work_hours(strt = "2014-12-01 08:00:00",
-                end  = "2015-03-01 16:00:00",
-                wknd_inpt = c("Friday", "Saturday"))
-
-# Teaching assistant
-calc_work_hours(strt = "2015-09-01 08:00:00",
-                end  = "2017-08-30 16:00:00",
-                wknd_inpt = c("Friday", "Saturday"))
-
-
-## Dental Assistant Experience
-
-# Everett
-calc_work_hours(strt = "2025-06-23 08:00:00",
-                end  = "2025-09-05 16:00:00")
-
-# Bellevue
-calc_work_hours(strt = "2026-04-15 08:00:00",
-                end  = Sys.time())
