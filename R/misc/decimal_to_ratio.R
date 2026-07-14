@@ -3,10 +3,10 @@
 #' @details
 #' Aug 8, 2025
 
-decimal_to_ratio <- function(decimal) {
+decimal_to_ratio <- function(decimal, digits_inpt = 2) {
       
       # Convert decimal to fraction
-      frac <- MASS::fractions(round(x = decimal, digits = 1))
+      frac <- MASS::fractions(round(x = decimal, digits = digits_inpt))
       
       # Extract numerator and denominator
       parts <- strsplit(attr(frac, "fracs"), "/")[[1]]
