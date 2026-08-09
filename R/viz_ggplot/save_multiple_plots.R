@@ -8,7 +8,7 @@ save_multiple_plots <- function(plot_list,
                                 width_inpt  = 900,
                                 height_inpt = 600,
                                 units_inpt  = "px",
-                                dpi_ipt     = 300) {
+                                dpi_inpt    = 300) {
       
       mapply(
             FUN  = function(plot, name) {
