@@ -32,6 +32,10 @@ viz_stack_barplot <- function(dset,
                               facet_input = NULL,
                               lgnd_nrow   = 1) {
 
+      # Required package(s)
+      # https://stackoverflow.com/questions/46270860/importing-a-library-inside-a-function
+      if (!require(tidyverse)) stop("tidyverse not installed!")
+
       # Set fill color if not defined manually
       if (is.null(fill_vec)) {
             col_name <- deparse(substitute(fill_input))
@@ -47,11 +51,11 @@ viz_stack_barplot <- function(dset,
             facet <- NULL
 
       } else if (length(facet_vars) == 1) {
-            facet <- ggplot2::facet_wrap(ggplot2::vars(!!!facet_vars))
+            facet <- facet_wrap(vars(!!!facet_vars))
 
       } else if (length(facet_vars) == 2) {
-            facet <- ggplot2::facet_grid(rows = ggplot2::vars(!!facet_vars[[1]]),
-                                         cols = ggplot2::vars(!!facet_vars[[2]]))
+            facet <- facet_grid(rows = vars(!!facet_vars[[1]]),
+                                cols = vars(!!facet_vars[[2]]))
 
       } else stop("Cannot have more than 2 facet variables!")
 
