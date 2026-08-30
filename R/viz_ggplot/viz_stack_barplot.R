@@ -90,7 +90,7 @@ viz_stack_barplot <- function(dset,
             theme(aspect.ratio       = NULL,
                   legend.position    = "bottom",
                   axis.text.y        = element_text(margin = margin(0, 5, 0, 0)),
-                  panel.grid.major.x = element_blank(),
+                  panel.grid.major.y = element_blank(),
                   strip.background   = element_blank(),
                   strip.text.y       = element_blank(),
                   strip.placement    = "outside") # Place titles outside plot
