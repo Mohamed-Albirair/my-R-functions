@@ -13,15 +13,15 @@ explore_rdata_obj <- function(file_path,
             stop("The file path provided does not exist: ", file_path)
       }
       
-      # Return names early if user only wants a quick look
-      if (labs_only) {
-            return(load(file = file_path, envir = NULL))
-      }
+      # Create an isolated temp env
+      temp_env <- new.env(parent = emptyenv())
       
       # Load into an isolated environment
-      temp_env <- new.env(parent = emptyenv())
       obj_vec  <- load(file  = file_path,
                        envir = temp_env)
+      
+      # Return names early if user only wants a quick look
+      if (labs_only) return(load(obj_vec))
       
       # Handle empty RData files
       if (length(obj_vec) == 0) {
