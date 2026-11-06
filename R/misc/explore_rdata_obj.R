@@ -1,4 +1,4 @@
-#' @title Explore Objects Contained within an *.RData file
+#' @title Explore and extract Objects Contained within an *.RData file
 #' @author Mohamed Albirair, MBBS, MPH, PhD
 #' @param file_path Location where the .RData file is stored
 #' @param obj_nm Name of target object within the .RData file
@@ -12,9 +12,11 @@ explore_rdata_obj <- function(file_path,
       obj_vec <- load(file  = file_path,
                       envir = temp_env)
       
+      # Check if RData file is empty
       if (!is.null(obj_nm)) {
             present <- obj_nm %in% obj_vec
             
+            # Check if target object is present
             if (present) {
                   trgt_obj <- get(x = obj_nm,
                                   envir = temp_env)
