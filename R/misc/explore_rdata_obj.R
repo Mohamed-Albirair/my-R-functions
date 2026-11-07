@@ -1,17 +1,16 @@
 #' @title Explore and extract Objects Contained within an *.RData file
 #' @author Mohamed Albirair, MBBS, MPH, PhD
 #' @param file_path Location where the .RData file is stored
+#' @param nm_only User-defined parameter, if only a vector of object names is desired
 #' @param obj_nm Name of target object within the .RData file
 
 
 explore_rdata_obj <- function(file_path,
-                              labs_only = FALSE,
-                              obj_lab   = NULL) {
+                              nm_only = FALSE,
+                              obj_nm  = NULL) {
       
       # Check if file doens't exit
-      if (!file.exists(file_path)) {
-            stop("The file path provided does not exist: ", file_path)
-      }
+      if (!file.exists(file_path)) stop("The file path provided does not exist: ", file_path)
       
       # Create an isolated temp env
       temp_env <- new.env(parent = emptyenv())
@@ -21,7 +20,7 @@ explore_rdata_obj <- function(file_path,
                        envir = temp_env)
       
       # Return names early if user only wants a quick look
-      if (labs_only) return(load(obj_vec))
+      if (nm_only) return(obj_vec)
       
       # Handle empty RData files
       if (length(obj_vec) == 0) {
@@ -29,48 +28,21 @@ explore_rdata_obj <- function(file_path,
             return(NULL)
       }
       
-      # Return target object or list everything
-      if (!is.null(obj_lab)) {
-            # get0 returns NULL if not found, avoiding scoping issues
-            trgt_obj <- get0(x        = obj_lab,
-                             envir    = temp_env,
-                             inherits = FALSE)
-            
-            if (!is.null(trgt_obj)) {
-                  return(trgt_obj)
-                  
-            } else {
-                  stop(
-                        "Object '", obj_lab, "' not found in file.\n", 
-                        "Available objects: ", paste(obj_vec, collapse = ", ")
-                  )
-            }
-            
-      # When no 'obj_lab' is inputted
-      } else {
-            # Return named list of all objects inside instead of just character names
-            return(as.list(temp_env))
+      # If no object name is inputted, 
+      # return named list of all objects inside instead of just character names
+      if (is.null(obj_nm)) return(as.list(temp_env))
+      
+      # If inputted object name does not exist in the .RData environment:
+      if (!obj_nm %in% obj_vec) {
+            stop("Object '", obj_nm, "' not found in file.\n",
+                 "Available objects: ", paste(obj_vec, collapse = ", "))
       }
+      
+      # Return target object
+      trgt_obj <- temp_env[[obj_nm]]
+      rm(list = setdiff(obj_vec, obj_nm), envir = temp_env)  # drop the rest
+      rm(temp_env)
+      gc(verbose = FALSE)
+      
+      trgt_obj
 }
-#       
-#       # Check if RData file is empty
-#       if (!is.null(obj_nm)) {
-#             present <- obj_nm %in% obj_vec
-#             
-#             # Check if target object is present
-#             if (present) {
-#                   trgt_obj <- get(x = obj_nm,
-#                                   envir = temp_env)
-#                   
-#                   return(trgt_obj)
-#                   
-#             } else {
-#                   stop("Inputted object is not present within .RData file")
-#             }
-#             
-#       } else {
-#             return(obj_vec)
-#             
-#       }
-# 
-# }
