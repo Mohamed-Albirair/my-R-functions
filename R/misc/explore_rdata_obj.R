@@ -6,7 +6,7 @@
 
 
 explore_rdata_obj <- function(file_path,
-                              nm_only = FALSE,
+                              # nm_only = FALSE,
                               obj_nm  = NULL) {
       
       # Check if file doens't exit
@@ -20,7 +20,7 @@ explore_rdata_obj <- function(file_path,
                        envir = temp_env)
       
       # Return names early if user only wants a quick look
-      if (nm_only) return(obj_vec)
+      # if (nm_only) return(obj_vec)
       
       # Handle empty RData files
       if (length(obj_vec) == 0) {
