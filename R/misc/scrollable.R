@@ -10,3 +10,19 @@ scrollable <- function(df, h_inpt = "600px") {
             kableExtra::kable_styling("striped") %>% 
             kableExtra::scroll_box(height = h_inpt)
 }
+
+
+# A faster version for larger datasets
+scrollable_DT <- function(x,
+                          ht_inpt  = "400px",
+                          dgt_inpt = z$n_decimals) {
+      dt <- DT::datatable(data          =  x,
+                          fillContainer = FALSE,
+                          options       = list(pageLength = 10,
+                                               scrollX    = TRUE,
+                                               scrollY    = ht_inpt))
+      
+      # Identify numeric columns and format them to 5 decimal places
+      numeric_cols <- which(sapply(x, is.numeric))
+      dt <- DT::formatRound(dt, columns = numeric_cols, digits = dgt_inpt)
+}
